@@ -10,7 +10,10 @@
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "build": "yarn trpc:generate || true",
-    "trpc:generate": "yarn tsc --project tsconfig.json"
+    "build:dev": "yarn trpc:generate:dev || true",
+    "trpc:generate": "yarn tsc --project tsconfig.json",
+    "trpc:generate:dev": "yarn tsc --project tsconfig.dev.json",
+    "dev": "yarn build:dev"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.17.15",

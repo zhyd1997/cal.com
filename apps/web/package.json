@@ -8,6 +8,7 @@
     "analyze:browser": "BUNDLE_ANALYZE=browser next build",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next",
     "dev": "yarn copy-static && next dev --turbopack",
+    "dev:fast": "yarn copy-static && yarn workspace @calcom/trpc build:dev && next dev --turbopack",
     "dev:cron": "npx tsx cron-tester.ts",
     "dev-https": "NODE_TLS_REJECT_UNAUTHORIZED=0 next dev --experimental-https",
     "dx": "yarn dev",

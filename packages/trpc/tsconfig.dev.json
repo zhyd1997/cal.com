@@ -1,0 +1,31 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "./.tsbuildinfo.dev",
+    "skipLibCheck": true,
+    "noEmitOnError": false,
+    "declaration": false,
+    "emitDeclarationOnly": false,
+    "isolatedModules": false,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  },
+  "include": [
+    "./server/trpc.ts",
+    "./server/createContext.ts",
+    "./server/errorFormatter.ts",
+    "./server/onErrorHandler.ts",
+    "./server/routers/_app.ts"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "./server/**/*.test.ts",
+    "./server/**/*.spec.ts",
+    "./server/**/*.integration-test.ts",
+    "./server/routers/**/*.handler.ts",
+    "./server/routers/**/*.schema.ts",
+    "./server/routers/**/*.util.ts"
+  ]
+}

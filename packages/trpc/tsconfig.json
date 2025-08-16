@@ -23,16 +23,27 @@
     "../types/window.d.ts",
     "./server"
   ],
-  "exclude": ["**/node_modules/**", "./react", "./server/**/*.test.ts", "./server/**/*.spec.ts"],
+  "exclude": [
+    "**/node_modules/**", 
+    "./react", 
+    "./server/**/*.test.ts", 
+    "./server/**/*.spec.ts",
+    "./server/**/*.integration-test.ts",
+    "./types"
+  ],
   "compilerOptions": {
     "isolatedModules": false,
     "noEmit": false,
-    "declaration": true,
-    "emitDeclarationOnly": true,
+    "declaration": false,
+    "emitDeclarationOnly": false,
     "experimentalDecorators": true,
     "declarationMap": false,
     "resolveJsonModule": true,
     "declarationDir": "types/server",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "incremental": true,
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "skipLibCheck": true,
+    "noEmitOnError": false
   }
 }
