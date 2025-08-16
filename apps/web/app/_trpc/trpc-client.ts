@@ -8,25 +8,48 @@ import { httpBatchLink, httpLink, loggerLink, splitLink } from "@trpc/client";
 
 import { trpc } from "./trpc";
 
+// Performance monitoring for development
+const isPerfMonitoringEnabled = process.env.NODE_ENV === "development" && 
+  process.env.NEXT_PUBLIC_ENABLE_PERF_MONITORING === "true";
+
+// Optimized endpoint resolution - cache the mapping
+const createEndpointLinks = (runtime: any, useBatch: boolean) => {
+  const linkType = useBatch ? httpBatchLink : httpLink;
+  return Object.fromEntries(
+    ENDPOINTS.map((endpoint) => [
+      endpoint,
+      linkType({
+        url: `${url}/${endpoint}`,
+      })(runtime),
+    ])
+  );
+};
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const resolveEndpoint = (links: any) => {
-  // TODO: Update our trpc routes so they are more clear.
-  // This function parses paths like the following and maps them
-  // to the correct API endpoints.
-  // - viewer.me - 2 segment paths like this are for logged in requests
-  // - viewer.public.i18n - 3 segments paths can be public or authed
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // Optimized path parsing
   return (ctx: any) => {
     const parts = ctx.op.path.split(".");
-    let endpoint;
-    let path = "";
-    if (parts.length == 2) {
-      endpoint = parts[0] as keyof typeof links;
+    let endpoint: string;
+    let path: string;
+    
+    if (parts.length === 2) {
+      endpoint = parts[0];
       path = parts[1];
     } else {
-      endpoint = parts[1] as keyof typeof links;
-      path = parts.splice(2, parts.length - 2).join(".");
+      endpoint = parts[1];
+      path = parts.slice(2).join(".");
     }
+    
+    // Performance monitoring
+    if (isPerfMonitoringEnabled) {
+      const startTime = performance.now();
+      const result = links[endpoint]({ ...ctx, op: { ...ctx.op, path } });
+      const endTime = performance.now();
+      console.log(`tRPC ${endpoint}.${path} took ${(endTime - startTime).toFixed(2)}ms`);
+      return result;
+    }
+    
     return links[endpoint]({ ...ctx, op: { ...ctx.op, path } });
   };
 };
@@ -40,38 +63,28 @@ const url =
 
 export const trpcClient = trpc.createClient({
   links: [
-    // adds pretty logs to your console in development and logs errors in production
+    // Only enable logging in development if explicitly requested
     loggerLink({
-      enabled: (opts) =>
-        (typeof process.env.NEXT_PUBLIC_LOGGER_LEVEL === "number" &&
-          process.env.NEXT_PUBLIC_LOGGER_LEVEL >= 0) ||
-        (opts.direction === "down" && opts.result instanceof Error),
+      enabled: (opts) => {
+        // Disable logging in development unless explicitly enabled
+        if (process.env.NODE_ENV === "development") {
+          return process.env.NEXT_PUBLIC_LOGGER_LEVEL === "0";
+        }
+        // Only log errors in production
+        return opts.direction === "down" && opts.result instanceof Error;
+      },
     }),
     splitLink({
       // check for context property `skipBatch`
       condition: (op) => !!op.context.skipBatch,
       // when condition is true, use normal request
       true: (runtime) => {
-        const links = Object.fromEntries(
-          ENDPOINTS.map((endpoint) => [
-            endpoint,
-            httpLink({
-              url: `${url}/${endpoint}`,
-            })(runtime),
-          ])
-        );
+        const links = createEndpointLinks(runtime, false);
         return resolveEndpoint(links);
       },
       // when condition is false, use batch request
       false: (runtime) => {
-        const links = Object.fromEntries(
-          ENDPOINTS.map((endpoint) => [
-            endpoint,
-            httpBatchLink({
-              url: `${url}/${endpoint}`,
-            })(runtime),
-          ])
-        );
+        const links = createEndpointLinks(runtime, true);
         return resolveEndpoint(links);
       },
     }),

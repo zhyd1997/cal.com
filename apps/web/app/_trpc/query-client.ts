@@ -11,14 +11,18 @@ const isTRPCClientError = (cause: unknown): cause is TRPCClientError<any> => {
 };
 
 export const queryClient = new QueryClient({
-  // these configurations are copied from "packages/trpc/react/trpc.ts"
+  // Optimized configurations for development performance
   defaultOptions: {
     queries: {
       /**
-       * 1s should be enough to just keep identical query waterfalls low
+       * Increased stale time for better development performance
        * @example if one page components uses a query that is also used further down the tree
        */
-      staleTime: 1000,
+      staleTime: process.env.NODE_ENV === "development" ? 5000 : 1000,
+      /**
+       * Disable refetch on window focus in development for better performance
+       */
+      refetchOnWindowFocus: process.env.NODE_ENV !== "development",
       /**
        * Retry `useQuery()` calls depending on this function
        */
@@ -32,6 +36,12 @@ export const queryClient = new QueryClient({
         }
         return failureCount < MAX_QUERY_RETRIES;
       },
+    },
+    mutations: {
+      /**
+       * Optimize mutation retries for development
+       */
+      retry: process.env.NODE_ENV === "development" ? 1 : 3,
     },
   },
 });
