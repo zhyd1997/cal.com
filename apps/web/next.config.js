@@ -220,40 +220,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  webpack: (config, { webpack, buildId, isServer }) => {
-    if (isServer) {
-      // Module not found fix @see https://github.com/boxyhq/jackson/issues/1535#issuecomment-1704381612
-      config.plugins.push(
-        new webpack.IgnorePlugin({
-          resourceRegExp:
-            /(^@google-cloud\/spanner|^@mongodb-js\/zstd|^@sap\/hana-client\/extension\/Stream$|^@sap\/hana-client|^@sap\/hana-client$|^aws-crt|^aws4$|^better-sqlite3$|^bson-ext$|^cardinal$|^cloudflare:sockets$|^hdb-pool$|^ioredis$|^kerberos$|^mongodb-client-encryption$|^mysql$|^oracledb$|^pg-native$|^pg-query-stream$|^react-native-sqlite-storage$|^snappy\/package\.json$|^snappy$|^sql.js$|^sqlite3$|^typeorm-aurora-data-api-driver$)/,
-        })
-      );
-
-      config.externals.push("formidable");
-    }
-
-    config.plugins.push(new webpack.DefinePlugin({ "process.env.BUILD_ID": JSON.stringify(buildId) }));
-
-    config.resolve.fallback = {
-      ...config.resolve.fallback, // if you miss it, all the other options in fallback, specified
-      // by next.js will be dropped. Doesn't make much sense, but how it is
-      fs: false,
-      // ignore module resolve errors caused by the server component bundler
-      "pg-native": false,
-    };
-
-    /**
-     * TODO: Find more possible barrels for this project.
-     *  @see https://github.com/vercel/next.js/issues/12557#issuecomment-1196931845
-     **/
-    config.module.rules.push({
-      test: [/lib\/.*.tsx?/i],
-      sideEffects: false,
-    });
-
-    return config;
-  },
   async rewrites() {
     const { orgSlug } = nextJsOrgRewriteConfig;
     const beforeFiles = [
