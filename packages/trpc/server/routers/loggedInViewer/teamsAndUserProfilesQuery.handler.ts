@@ -5,7 +5,7 @@ import { withRoleCanCreateEntity } from "@calcom/lib/entityPermissionUtils.serve
 import { getUserAvatarUrl } from "@calcom/lib/getAvatarUrl";
 import type { PrismaClient } from "@calcom/prisma";
 import type { MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { parseTeamMetadata } from "@calcom/prisma/zod-utils";
 import type { TrpcSessionUser } from "@calcom/trpc/server/types";
 
 import { TRPCError } from "@trpc/server";
@@ -77,7 +77,7 @@ export const teamsAndUserProfilesQuery = async ({ ctx, input }: TeamsAndUserProf
         ...membership,
         team: {
           ...membership.team,
-          metadata: teamMetadataSchema.parse(membership.team.metadata),
+          metadata: parseTeamMetadata(membership.team.metadata),
         },
       }));
   } else {
@@ -87,7 +87,7 @@ export const teamsAndUserProfilesQuery = async ({ ctx, input }: TeamsAndUserProf
         ...membership,
         team: {
           ...membership.team,
-          metadata: teamMetadataSchema.parse(membership.team.metadata),
+          metadata: parseTeamMetadata(membership.team.metadata),
         },
       }));
   }
@@ -112,7 +112,6 @@ export const teamsAndUserProfilesQuery = async ({ ctx, input }: TeamsAndUserProf
     // Store permission results for teams that passed the filter
     hasPermissionForFiltered = permissionChecks.filter((hasPermission) => hasPermission);
     teamsData = teamsData.filter((_, index) => permissionChecks[index]);
-
   }
 
   return [

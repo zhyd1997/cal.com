@@ -393,6 +393,15 @@ export const teamMetadataSchema = z
   .partial()
   .nullable();
 
+export type TeamMetadata = z.infer<typeof teamMetadataSchema>;
+
+export const parseTeamMetadata = (metadata: unknown): TeamMetadata => {
+  if (process.env.NODE_ENV === "production") {
+    return metadata as TeamMetadata;
+  }
+  return teamMetadataSchema.parse(metadata);
+};
+
 export const bookingMetadataSchema = z
   .object({
     videoCallUrl: z.string().optional(),

@@ -23,7 +23,7 @@ import { type User as UserType, type UserPassword, Prisma } from "@calcom/prisma
 import type { Profile as ProfileType } from "@calcom/prisma/client";
 import type { CreationSource } from "@calcom/prisma/enums";
 import { MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { parseTeamMetadata } from "@calcom/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 
@@ -104,7 +104,7 @@ export async function getTeamOrThrow(teamId: number) {
       message: `Team not found`,
     });
 
-  return { ...team, metadata: teamMetadataSchema.parse(team.metadata) };
+  return { ...team, metadata: parseTeamMetadata(team.metadata) };
 }
 
 export async function getUniqueInvitationsOrThrowIfEmpty(invitations: Invitation[]) {

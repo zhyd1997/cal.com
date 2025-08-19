@@ -9,7 +9,7 @@ import { ProfileRepository } from "@calcom/lib/server/repository/profile";
 // import { getEventTypesByViewer } from "@calcom/lib/event-types/getEventTypesByViewer";
 import type { PrismaClient } from "@calcom/prisma";
 import { MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { parseTeamMetadata } from "@calcom/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 
@@ -65,7 +65,7 @@ export const getUserEventGroups = async ({ ctx, input }: GetByViewerOptions) => 
     ...membership,
     team: {
       ...membership.team,
-      metadata: teamMetadataSchema.parse(membership.team.metadata),
+      metadata: parseTeamMetadata(membership.team.metadata),
     },
   }));
 
@@ -135,7 +135,7 @@ export const getUserEventGroups = async ({ ctx, input }: GetByViewerOptions) => 
 
           const team = {
             ...membership.team,
-            metadata: teamMetadataSchema.parse(membership.team.metadata),
+            metadata: parseTeamMetadata(membership.team.metadata),
           };
 
           let slug;
@@ -150,7 +150,7 @@ export const getUserEventGroups = async ({ ctx, input }: GetByViewerOptions) => 
           }
 
           // const eventTypes = await Promise.all(team.eventTypes.map(mapEventType));
-          const teamParentMetadata = team.parent ? teamMetadataSchema.parse(team.parent.metadata) : null;
+          const teamParentMetadata = team.parent ? parseTeamMetadata(team.parent.metadata) : null;
           return {
             teamId: team.id,
             parentId: team.parentId,

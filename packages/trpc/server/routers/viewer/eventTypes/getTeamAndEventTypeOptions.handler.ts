@@ -4,7 +4,7 @@ import { MembershipRepository } from "@calcom/lib/server/repository/membership";
 import { ProfileRepository } from "@calcom/lib/server/repository/profile";
 import type { PrismaClient } from "@calcom/prisma";
 import { MembershipRole, SchedulingType } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { parseTeamMetadata } from "@calcom/prisma/zod-utils";
 import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
@@ -97,7 +97,7 @@ export const getTeamAndEventTypeOptions = async ({ ctx, input }: GetTeamAndEvent
     ...membership,
     team: {
       ...membership.team,
-      metadata: teamMetadataSchema.parse(membership.team.metadata),
+      metadata: parseTeamMetadata(membership.team.metadata),
     },
   }));
 
@@ -139,7 +139,7 @@ export const getTeamAndEventTypeOptions = async ({ ctx, input }: GetTeamAndEvent
         .map(async (membership) => {
           const team = {
             ...membership.team,
-            metadata: teamMetadataSchema.parse(membership.team.metadata),
+            metadata: parseTeamMetadata(membership.team.metadata),
           };
 
           const eventTypes = team.eventTypes;

@@ -9,7 +9,7 @@ import slugify from "@calcom/lib/slugify";
 import { prisma } from "@calcom/prisma";
 import type { CreationSource } from "@calcom/prisma/enums";
 import { MembershipRole, RedirectType } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { parseTeamMetadata, teamMetadataSchema } from "@calcom/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 
@@ -223,7 +223,7 @@ async function moveTeam({
   log.info("Moving team", safeStringify({ teamId, newSlug, oldSlug: team.slug }));
 
   newSlug = newSlug ?? team.slug;
-  const orgMetadata = teamMetadataSchema.parse(org.metadata);
+  const orgMetadata = parseTeamMetadata(org.metadata);
   try {
     await prisma.team.update({
       where: {

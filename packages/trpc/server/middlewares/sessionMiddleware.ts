@@ -7,7 +7,7 @@ import { safeStringify } from "@calcom/lib/safeStringify";
 import { ProfileRepository } from "@calcom/lib/server/repository/profile";
 import { UserRepository } from "@calcom/lib/server/repository/user";
 import prisma from "@calcom/prisma";
-import { teamMetadataSchema, userMetadata } from "@calcom/prisma/zod-utils";
+import { parseTeamMetadata, userMetadata } from "@calcom/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 
@@ -51,7 +51,7 @@ export async function getUserFromSession(ctx: TRPCContextInner, session: Maybe<S
   }
 
   const userMetaData = userMetadata.parse(user.metadata || {});
-  const orgMetadata = teamMetadataSchema.parse(user.profile?.organization?.metadata || {});
+  const orgMetadata = parseTeamMetadata(user.profile?.organization?.metadata || {});
   // This helps to prevent reaching the 4MB payload limit by avoiding base64 and instead passing the avatar url
 
   const locale = user?.locale ?? ctx.locale;
