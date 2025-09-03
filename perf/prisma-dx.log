@@ -1,0 +1,46 @@
+Environment variables loaded from .env
+Prisma schema loaded from schema.prisma
+Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-polished-mud-a16ktzhd-pooler.ap-southeast-1.aws.neon.tech"
+
+478 migrations found in prisma/migrations
+
+Applying migration `20250811123707_add_team_list_members_permission_to_admin_role`
+Applying migration `20250812101632_add_impersonate_permissions_to_admin_role`
+Applying migration `20250818151914_routing_form_response_denormalized_backfill2`
+Applying migration `20250829133535_add_member_defaults_permissions_teams`
+
+The following migrations have been applied:
+
+migrations/
+  └─ 20250811123707_add_team_list_members_permission_to_admin_role/
+    └─ migration.sql
+  └─ 20250812101632_add_impersonate_permissions_to_admin_role/
+    └─ migration.sql
+  └─ 20250818151914_routing_form_response_denormalized_backfill2/
+    └─ migration.sql
+  └─ 20250829133535_add_member_defaults_permissions_teams/
+    └─ migration.sql
+      
+All migrations have been successfully applied.
+Environment variables loaded from .env
+Running seed command `ts-node --transpile-only ./seed.ts` ...
+Could not upsert app: apple-calendar. Error: PrismaClientKnownRequestError: 
+Invalid `prisma.app.findFirst()` invocation in
+/workspaces/cal.com/packages/prisma/seed-app-store.ts:187:39
+
+  184   isTemplate?: boolean
+  185 ) {
+  186   try {
+→ 187     const foundApp = await prisma.app.findFirst(
+Error validating datasource `db`: the URL must start with the protocol `prisma://`
+    at Cn.handleRequestError (/workspaces/cal.com/node_modules/@prisma/client/runtime/library.js:123:6817)
+    at Cn.handleAndLogRequestError (/workspaces/cal.com/node_modules/@prisma/client/runtime/library.js:123:6206)
+    at Cn.request (/workspaces/cal.com/node_modules/@prisma/client/runtime/library.js:123:5926)
+    at async l (/workspaces/cal.com/node_modules/@prisma/client/runtime/library.js:128:9968)
+    at async createApp (/workspaces/cal.com/packages/prisma/seed-app-store.ts:187:22)
+    at async main (/workspaces/cal.com/packages/prisma/seed-app-store.ts:246:3) {
+  code: 'P5002',
+  clientVersion: '5.4.2',
+  meta: undefined
+}
+No 'dx' script; skipping

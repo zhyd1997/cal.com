@@ -1,0 +1,10 @@
+7:import { ZCreateInputSchema } from "./create.schema";
+8:import { ZDeleteInputSchema } from "./delete.schema";
+9:import { ZDuplicateInputSchema } from "./duplicate.schema";
+10:import { ZEventTypeInputSchema, ZGetEventTypesFromGroupSchema } from "./getByViewer.schema";
+11:import { ZGetHashedLinkInputSchema } from "./getHashedLink.schema";
+12:import { ZGetHashedLinksInputSchema } from "./getHashedLinks.schema";
+13:import { ZGetTeamAndEventTypeOptionsSchema } from "./getTeamAndEventTypeOptions.schema";
+15:import { ZUpdateInputSchema } from "./update.schema";
+166:      z.object({
+167:        eventTypeIds: z.array(z.number()),

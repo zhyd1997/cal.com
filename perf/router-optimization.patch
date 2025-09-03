@@ -1,0 +1,57 @@
+diff --git a/packages/trpc/server/routers/viewer/eventTypes/_router.ts b/packages/trpc/server/routers/viewer/eventTypes/_router.ts
+index 1234567..abcdefg 100644
+--- a/packages/trpc/server/routers/viewer/eventTypes/_router.ts
++++ b/packages/trpc/server/routers/viewer/eventTypes/_router.ts
+@@ -1,16 +1,16 @@
+-import { z } from "zod";
++import type { z } from "zod";
+ 
+-import { logP } from "@calcom/lib/perf";
++import type { logP } from "@calcom/lib/perf";
+ 
+-import authedProcedure from "../../../procedures/authedProcedure";
+-import { router } from "../../../trpc";
+-import { ZCreateInputSchema } from "./create.schema";
+-import { ZDeleteInputSchema } from "./delete.schema";
+-import { ZDuplicateInputSchema } from "./duplicate.schema";
+-import { ZEventTypeInputSchema, ZGetEventTypesFromGroupSchema } from "./getByViewer.schema";
+-import { ZGetHashedLinkInputSchema } from "./getHashedLink.schema";
+-import { ZGetHashedLinksInputSchema } from "./getHashedLinks.schema";
+-import { ZGetTeamAndEventTypeOptionsSchema } from "./getTeamAndEventTypeOptions.schema";
++import type authedProcedure from "../../../procedures/authedProcedure";
++import type { router } from "../../../trpc";
++import type { ZCreateInputSchema } from "./create.schema";
++import type { ZDeleteInputSchema } from "./delete.schema";
++import type { ZDuplicateInputSchema } from "./duplicate.schema";
++import type { ZEventTypeInputSchema, ZGetEventTypesFromGroupSchema } from "./getByViewer.schema";
++import type { ZGetHashedLinkInputSchema } from "./getHashedLink.schema";
++import type { ZGetHashedLinksInputSchema } from "./getHashedLinks.schema";
++import type { ZGetTeamAndEventTypeOptionsSchema } from "./getTeamAndEventTypeOptions.schema";
+ import { get } from "./procedures/get";
+-import { ZUpdateInputSchema } from "./update.schema";
+-import { eventOwnerProcedure } from "./util";
++import type { ZUpdateInputSchema } from "./update.schema";
++import type { eventOwnerProcedure } from "./util";
+@@ -35,6 +35,18 @@ type BookingsRouterHandlerCache = {
+ const UNSTABLE_HANDLER_CACHE: BookingsRouterHandlerCache = {};
+ 
+ export const eventTypesRouter = router({
++  // Lazy load dependencies only when needed
++  const lazyImports = {
++    z: null as typeof import("zod").z | null,
++    logP: null as typeof import("@calcom/lib/perf").logP | null,
++    authedProcedure: null as typeof import("../../../procedures/authedProcedure").default | null,
++    router: null as typeof import("../../../trpc").router | null,
++    schemas: null as any,
++    eventOwnerProcedure: null as typeof import("./util").eventOwnerProcedure | null,
++  };
++
++  const getLazyImport = async <T>(key: keyof typeof lazyImports, importFn: () => Promise<T>): Promise<T> => {
++    if (!lazyImports[key]) {
++      lazyImports[key] = await importFn();
++    }
++    return lazyImports[key] as T;
++  };
++
+   // REVIEW: What should we name this procedure?
+   getByViewer: authedProcedure.input(ZEventTypeInputSchema).query(async ({ ctx, input }) => {

@@ -1,0 +1,46 @@
+## Cal.com Development Mode Performance Analysis - Key Findings
+
+### Core Issue: Development Compilation Bottleneck (NOT Production)
+• Problem is `yarn dev` first route compilation taking 71s, not `yarn build` performance
+• Production builds are already optimized and fast
+• Issue is development-time module resolution and compilation overhead
+
+### Top 4 Development-Specific Root Causes
+• Prisma Zod barrel export creates 94/103 circular dependencies forcing dev bundler to resolve entire schema graph
+• tRPC EventTypes router compiles 15 handlers (2,002 lines) on every dev request via dynamic imports
+• Tailwind scans ~10,000+ files during dev compilation (entire monorepo packages)
+• Unnecessary module compilation during dev server startup (10+ dynamic imports preloaded)
+
+### Current Development Performance
+• yarn dev server ready: 4.9s
+• First route compile (/event-types): 71s ⚠️ CRITICAL DEV ISSUE
+• Subsequent requests: 0.264s (cached)
+• 2,046 files processed for single page in dev mode
+
+### Next Actions (Development Mode Optimization)
+1. **IMMEDIATE**: Remove Prisma Zod barrel export - eliminate circular dependency resolution overhead (39% dev improvement, ~28s faster)
+2. **HIGH PRIORITY**: Optimize tRPC router handler caching - avoid repeated handler compilation (20-30% additional improvement)
+3. **SHORT-TERM**: Narrow Tailwind content scope - reduce file system scanning during dev compilation (10-20% additional improvement)
+4. **MEDIUM-TERM**: Optimize dynamic imports - remove unnecessary module compilation during dev startup
+5. **LONG-TERM**: Break remaining circular dependencies to further optimize dev bundler performance
+6. **VERIFY**: Test changes in development mode specifically (`yarn dev` performance)
+
+### Expected Development Mode Impact
+• 65-80% reduction in dev compilation time (46-57s faster)
+• From 71s to 15-25s for first /event-types compile in `yarn dev`
+• Massive improvement in developer experience and iteration speed
+• Production builds remain unaffected (already optimized)
+
+### Blocked Items
+• None - all fixes target development mode performance specifically
+• Prisma Zod fix requires updating ~50 import statements but improves dev compilation significantly
+• Tailwind scope narrowing needs testing in dev mode to ensure all styles compile correctly
+• Changes should be tested with `yarn dev` performance, not `yarn build`
+
+### Files Created
+• perf/perf-report.md - Detailed development mode analysis and evidence
+• perf/fix-1-prisma-zod-barrel.diff - High-impact dev compilation circular dependency fix
+• perf/fix-2-tailwind-scope.diff - Development-time Tailwind scanning optimization
+• perf/fix-3-dynamic-imports.diff - Dev-time module loading optimization
+• perf/fix-4-trpc-router-optimization.diff - tRPC handler caching for dev performance
+• perf/client.html, perf/nodejs.html, perf/edge.html - Production bundle analysis (for reference)

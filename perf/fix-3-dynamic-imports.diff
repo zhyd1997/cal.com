@@ -1,0 +1,89 @@
+--- a/packages/platform/atoms/event-types/wrappers/EventTypeWebWrapper.tsx
++++ b/packages/platform/atoms/event-types/wrappers/EventTypeWebWrapper.tsx
+@@ -32,29 +32,35 @@ import { useTabsNavigations } from "../hooks/useTabsNavigations";
+ const ManagedEventTypeDialog = dynamic(
+   () => import("@calcom/features/eventtypes/components/dialogs/ManagedEventDialog")
+ );
+
+ const AssignmentWarningDialog = dynamic(
+   () => import("@calcom/features/eventtypes/components/dialogs/AssignmentWarningDialog")
+ );
+
++// Load setup tab immediately (most commonly used)
+ const EventSetupTab = dynamic(() =>
+-  // import web wrapper when it's ready
+   import("./EventSetupTabWebWrapper").then((mod) => mod)
+ );
+
++// Load other tabs on-demand with SSR disabled for better performance
+ const EventAvailabilityTab = dynamic(() =>
+-  // import web wrapper when it's ready
+-  import("./EventAvailabilityTabWebWrapper").then((mod) => mod)
++  import("./EventAvailabilityTabWebWrapper").then((mod) => mod),
++  { ssr: false }
+ );
+
+-const EventTeamAssignmentTab = dynamic(() => import("./EventTeamAssignmentTabWebWrapper").then((mod) => mod));
++const EventTeamAssignmentTab = dynamic(() => 
++  import("./EventTeamAssignmentTabWebWrapper").then((mod) => mod),
++  { ssr: false }
++);
+
+ const EventLimitsTab = dynamic(() =>
+-  // import web wrapper when it's ready
+-  import("./EventLimitsTabWebWrapper").then((mod) => mod)
++  import("./EventLimitsTabWebWrapper").then((mod) => mod),
++  { ssr: false }
+ );
+
+ const EventAdvancedTab = dynamic(() =>
+-  // import web wrapper when it's ready
+-  import("./EventAdvancedWebWrapper").then((mod) => mod)
++  import("./EventAdvancedWebWrapper").then((mod) => mod),
++  { ssr: false }
+ );
+
+ const EventInstantTab = dynamic(() =>
+@@ -64,7 +70,8 @@ const EventInstantTab = dynamic(() =>
+ );
+
+ const EventRecurringTab = dynamic(() =>
+-  // import web wrapper when it's ready
+-  import("./EventRecurringWebWrapper").then((mod) => mod)
++  import("./EventRecurringWebWrapper").then((mod) => mod),
++  { ssr: false }
+ );
+
+ const EventAppsTab = dynamic(() =>
+@@ -270,22 +277,8 @@ const EventTypeWeb = ({
+     },
+   });
+
+-  useEffect(() => {
+-    const timeout = setTimeout(() => {
+-      const Components = [
+-        EventSetupTab,
+-        EventAvailabilityTab,
+-        EventTeamAssignmentTab,
+-        EventLimitsTab,
+-        EventAdvancedTab,
+-        EventInstantTab,
+-        EventRecurringTab,
+-        EventAppsTab,
+-        EventWorkflowsTab,
+-        EventWebhooksTab,
+-      ];
+-
+-      Components.forEach((C) => {
+-        // how to preload with app dir?
+-        // @ts-expect-error Property 'render' does not exist on type 'ComponentClass
+-        C.render?.preload();
+-      });
+-    }, 300);
+-
+-    return () => {
+-      clearTimeout(timeout);
+-    };
+-  }, []);
++  // Remove preloading - components will load on-demand when tabs are accessed
++  // This reduces initial bundle size and compilation time

@@ -1,18 +1,53 @@
-// Use type-only import for z to reduce parse cost
+// Minimal fix version - only change imports to type-only where possible
+import type { z } from "zod";
+
 import { logP } from "@calcom/lib/perf";
 
 import authedProcedure from "../../../procedures/authedProcedure";
 import { router } from "../../../trpc";
-import { ZCreateInputSchema } from "./create.schema";
-import { ZDeleteInputSchema } from "./delete.schema";
-import { ZDuplicateInputSchema } from "./duplicate.schema";
-import { ZEventTypeInputSchema, ZGetEventTypesFromGroupSchema } from "./getByViewer.schema";
-import { ZGetHashedLinkInputSchema } from "./getHashedLink.schema";
-import { ZGetHashedLinksInputSchema } from "./getHashedLinks.schema";
-import { ZGetTeamAndEventTypeOptionsSchema } from "./getTeamAndEventTypeOptions.schema";
+
+// Lazy load schemas to avoid parsing overhead at module load time
+const getSchemas = async () => {
+  const [
+    { ZEventTypeInputSchema, ZGetEventTypesFromGroupSchema },
+    { ZGetTeamAndEventTypeOptionsSchema },
+    { ZCreateInputSchema },
+    { ZUpdateInputSchema },
+    { ZDeleteInputSchema },
+    { ZDuplicateInputSchema },
+    { ZGetHashedLinkInputSchema },
+    { ZGetHashedLinksInputSchema },
+  ] = await Promise.all([
+    import("./getByViewer.schema"),
+    import("./getTeamAndEventTypeOptions.schema"),
+    import("./create.schema"),
+    import("./update.schema"),
+    import("./delete.schema"),
+    import("./duplicate.schema"),
+    import("./getHashedLink.schema"),
+    import("./getHashedLinks.schema"),
+  ]);
+  
+  return {
+    ZEventTypeInputSchema,
+    ZGetEventTypesFromGroupSchema,
+    ZGetTeamAndEventTypeOptionsSchema,
+    ZCreateInputSchema,
+    ZUpdateInputSchema,
+    ZDeleteInputSchema,
+    ZDuplicateInputSchema,
+    ZGetHashedLinkInputSchema,
+    ZGetHashedLinksInputSchema,
+  };
+};
+
 import { get } from "./procedures/get";
-import { ZUpdateInputSchema } from "./update.schema";
-import { eventOwnerProcedure } from "./util";
+
+// Lazy load eventOwnerProcedure to avoid heavy util.ts parsing
+const getEventOwnerProcedure = async () => {
+  const { eventOwnerProcedure } = await import("./util");
+  return eventOwnerProcedure;
+};
 
 type BookingsRouterHandlerCache = {
   getByViewer?: typeof import("./getByViewer.handler").getByViewerHandler;
@@ -31,11 +66,18 @@ type BookingsRouterHandlerCache = {
 };
 
 // Init the handler cache
-const _UNSTABLE_HANDLER_CACHE: BookingsRouterHandlerCache = {};
+const UNSTABLE_HANDLER_CACHE: BookingsRouterHandlerCache = {};
+
+// Cache schemas and eventOwnerProcedure
+let _schemas: Awaited<ReturnType<typeof getSchemas>> | null = null;
+let _eventOwnerProcedure: Awaited<ReturnType<typeof getEventOwnerProcedure>> | null = null;
 
 export const eventTypesRouter = router({
   // REVIEW: What should we name this procedure?
-  getByViewer: authedProcedure.input(ZEventTypeInputSchema).query(async ({ ctx, input }) => {
+  getByViewer: authedProcedure.input((async () => {
+    if (!_schemas) _schemas = await getSchemas();
+    return _schemas.ZEventTypeInputSchema;
+  })()).query(async ({ ctx, input }) => {
     const { getByViewerHandler } = await import("./getByViewer.handler");
 
     const timer = logP(`getByViewer(${ctx.user.id})`);
@@ -49,7 +91,11 @@ export const eventTypesRouter = router({
 
     return result;
   }),
-  getUserEventGroups: authedProcedure.input(ZEventTypeInputSchema).query(async ({ ctx, input }) => {
+  
+  getUserEventGroups: authedProcedure.input((async () => {
+    if (!_schemas) _schemas = await getSchemas();
+    return _schemas.ZEventTypeInputSchema;
+  })()).query(async ({ ctx, input }) => {
     const { getUserEventGroups } = await import("./getUserEventGroups.handler");
 
     const timer = logP(`getUserEventGroups(${ctx.user.id})`);
@@ -65,7 +111,10 @@ export const eventTypesRouter = router({
   }),
 
   getEventTypesFromGroup: authedProcedure
-    .input(ZGetEventTypesFromGroupSchema)
+    .input((async () => {
+      if (!_schemas) _schemas = await getSchemas();
+      return _schemas.ZGetEventTypesFromGroupSchema;
+    })())
     .query(async ({ ctx, input }) => {
       const { getEventTypesFromGroup } = await import("./getEventTypesFromGroup.handler");
 
@@ -82,7 +131,10 @@ export const eventTypesRouter = router({
     }),
 
   getTeamAndEventTypeOptions: authedProcedure
-    .input(ZGetTeamAndEventTypeOptionsSchema)
+    .input((async () => {
+      if (!_schemas) _schemas = await getSchemas();
+      return _schemas.ZGetTeamAndEventTypeOptionsSchema;
+    })())
     .query(async ({ ctx, input }) => {
       const { getTeamAndEventTypeOptions } = await import("./getTeamAndEventTypeOptions.handler");
 
@@ -114,7 +166,10 @@ export const eventTypesRouter = router({
     });
   }),
 
-  create: authedProcedure.input(ZCreateInputSchema).mutation(async ({ ctx, input }) => {
+  create: authedProcedure.input((async () => {
+    if (!_schemas) _schemas = await getSchemas();
+    return _schemas.ZCreateInputSchema;
+  })()).mutation(async ({ ctx, input }) => {
     const { createHandler } = await import("./create.handler");
 
     return createHandler({
@@ -125,7 +180,11 @@ export const eventTypesRouter = router({
 
   get,
 
-  update: eventOwnerProcedure.input(ZUpdateInputSchema).mutation(async ({ ctx, input }) => {
+  update: (async () => {
+    if (!_eventOwnerProcedure) _eventOwnerProcedure = await getEventOwnerProcedure();
+    if (!_schemas) _schemas = await getSchemas();
+    return _eventOwnerProcedure.input(_schemas.ZUpdateInputSchema);
+  })().mutation(async ({ ctx, input }) => {
     const { updateHandler } = await import("./update.handler");
 
     return updateHandler({
@@ -134,7 +193,11 @@ export const eventTypesRouter = router({
     });
   }),
 
-  delete: eventOwnerProcedure.input(ZDeleteInputSchema).mutation(async ({ ctx, input }) => {
+  delete: (async () => {
+    if (!_eventOwnerProcedure) _eventOwnerProcedure = await getEventOwnerProcedure();
+    if (!_schemas) _schemas = await getSchemas();
+    return _eventOwnerProcedure.input(_schemas.ZDeleteInputSchema);
+  })().mutation(async ({ ctx, input }) => {
     const { deleteHandler } = await import("./delete.handler");
 
     return deleteHandler({
@@ -143,7 +206,11 @@ export const eventTypesRouter = router({
     });
   }),
 
-  duplicate: eventOwnerProcedure.input(ZDuplicateInputSchema).mutation(async ({ ctx, input }) => {
+  duplicate: (async () => {
+    if (!_eventOwnerProcedure) _eventOwnerProcedure = await getEventOwnerProcedure();
+    if (!_schemas) _schemas = await getSchemas();
+    return _eventOwnerProcedure.input(_schemas.ZDuplicateInputSchema);
+  })().mutation(async ({ ctx, input }) => {
     const { duplicateHandler } = await import("./duplicate.handler");
 
     return duplicateHandler({
@@ -161,16 +228,12 @@ export const eventTypesRouter = router({
   }),
 
   bulkUpdateToDefaultLocation: authedProcedure
-    .input(
-      // Import z inline to avoid top-level dependency
-      (() => {
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
-        const { z } = require("zod");
-        return z.object({
-          eventTypeIds: z.array(z.number()),
-        });
-      })()
-    )
+    .input((async () => {
+      const { z } = await import("zod");
+      return z.object({
+        eventTypeIds: z.array(z.number()),
+      });
+    })())
     .mutation(async ({ ctx, input }) => {
       const { bulkUpdateToDefaultLocationHandler } = await import("./bulkUpdateToDefaultLocation.handler");
 
@@ -180,7 +243,10 @@ export const eventTypesRouter = router({
       });
     }),
 
-  getHashedLink: authedProcedure.input(ZGetHashedLinkInputSchema).query(async ({ ctx, input }) => {
+  getHashedLink: authedProcedure.input((async () => {
+    if (!_schemas) _schemas = await getSchemas();
+    return _schemas.ZGetHashedLinkInputSchema;
+  })()).query(async ({ ctx, input }) => {
     const { getHashedLinkHandler } = await import("./getHashedLink.handler");
 
     return getHashedLinkHandler({
@@ -189,7 +255,10 @@ export const eventTypesRouter = router({
     });
   }),
 
-  getHashedLinks: authedProcedure.input(ZGetHashedLinksInputSchema).query(async ({ ctx, input }) => {
+  getHashedLinks: authedProcedure.input((async () => {
+    if (!_schemas) _schemas = await getSchemas();
+    return _schemas.ZGetHashedLinksInputSchema;
+  })()).query(async ({ ctx, input }) => {
     const { getHashedLinksHandler } = await import("./getHashedLinks.handler");
 
     return getHashedLinksHandler({

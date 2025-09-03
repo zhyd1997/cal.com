@@ -1,0 +1,22 @@
+--- a/packages/trpc/server/routers/viewer/eventTypes/_router.ts
++++ b/packages/trpc/server/routers/viewer/eventTypes/_router.ts
+@@ -1,4 +1,4 @@
+-import { z } from "zod";
++import type { z } from "zod";
+ 
+ import { logP } from "@calcom/lib/perf";
+ 
+@@ -164,9 +164,10 @@ export const eventTypesRouter = router({
+ 
+   bulkUpdateToDefaultLocation: authedProcedure
+     .input(
+-      z.object({
+-        eventTypeIds: z.array(z.number()),
+-      })
++      // Lazy load z to avoid top-level import cost
++      (async () => {
++        const { z } = await import("zod");
++        return z.object({ eventTypeIds: z.array(z.number()) });
++      })()
+     )
+     .mutation(async ({ ctx, input }) => {

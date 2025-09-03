@@ -1,0 +1,73 @@
+Run 1:
+Run 2:
+Run 3:
+
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'packages' imported from /workspaces/cal.com/perf/measure-import.ts
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at resolveBase (file:///home/codespace/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1756877096922:2:3744)
+    at resolveDirectory (file:///home/codespace/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1756877096922:2:4243)
+    at resolveTsPaths (file:///home/codespace/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1756877096922:2:4984)
+    at resolve (file:///home/codespace/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1756877096922:2:5361)
+    at nextResolve (node:internal/modules/esm/hooks:748:28) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v22.17.0
+
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/workspaces/cal.com/perf/packages/trpc/server/routers/viewer/eventTypes/_router.ts' imported from /workspaces/cal.com/perf/measure-import.ts
+Did you mean to import "../packages/trpc/server/routers/viewer/eventTypes/_router.ts"?
+    at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+    at moduleResolve (node:internal/modules/esm/resolve:860:10)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at resolveBase (file:///home/codespace/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1756877108905:2:3744)
+    at async resolveDirectory (file:///home/codespace/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1756877108905:2:4237)
+    at async resolve (file:///home/codespace/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1756877108905:2:5355)
+    at async nextResolve (node:internal/modules/esm/hooks:748:22)
+    at async Hooks.resolve (node:internal/modules/esm/hooks:240:24)
+    at async handleMessage (node:internal/modules/esm/worker:199:18) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///workspaces/cal.com/perf/packages/trpc/server/routers/viewer/eventTypes/_router.ts'
+}
+
+Node.js v22.17.0
+dynamic import of ../packages/trpc/server/routers/viewer/eventTypes/_router.ts: 2499.34 ms
+Run 2:
+dynamic import of ../packages/trpc/server/routers/viewer/eventTypes/_router.ts: 860.41 ms
+Run 3:
+dynamic import of ../packages/trpc/server/routers/viewer/eventTypes/_router.ts: 851.62 ms
+Run 1 (optimized):
+Run 2 (optimized):
+Run 3 (optimized):
+/workspaces/cal.com/node_modules/@trpc/server/dist/unstable-core-do-not-import/parser.js:34
+    throw new Error('Could not find a validator fn');
+          ^
+
+Error: Could not find a validator fn
+    at Object.getParseFn (/workspaces/cal.com/node_modules/@trpc/server/dist/unstable-core-do-not-import/parser.js:34:11)
+    at Object.input (/workspaces/cal.com/node_modules/@trpc/server/dist/unstable-core-do-not-import/procedureBuilder.js:38:37)
+    at authedProcedure (/workspaces/cal.com/packages/trpc/server/routers/viewer/eventTypes/_router.ts:165:6)
+    at Object.<anonymous> (/workspaces/cal.com/packages/trpc/server/routers/viewer/eventTypes/_router.ts:198:2)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object.transformer (/home/codespace/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/register-D46fvsV_.cjs:3:1104)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+
+Node.js v22.17.0
+dynamic import of ../packages/trpc/server/routers/viewer/eventTypes/_router.ts: 1040.79 ms
+Run 2 (optimized):
+dynamic import of ../packages/trpc/server/routers/viewer/eventTypes/_router.ts: 858.67 ms
+Run 3 (optimized):
+dynamic import of ../packages/trpc/server/routers/viewer/eventTypes/_router.ts: 1858.16 ms

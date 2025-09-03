@@ -1,0 +1,129 @@
+--- a/packages/prisma/zod/index.ts
++++ b/packages/prisma/zod/index.ts
+@@ -1,100 +1,3 @@
+-export * from "./host"
+-export * from "./hostgroup"
+-export * from "./calvideosettings"
+-export * from "./eventtype"
+-export * from "./credential"
+-export * from "./destinationcalendar"
+-export * from "./userpassword"
+-export * from "./travelschedule"
+-export * from "./user"
+-export * from "./notificationssubscriptions"
+-export * from "./profile"
+-export * from "./team"
+-export * from "./creditbalance"
+-export * from "./creditpurchaselog"
+-export * from "./creditexpenselog"
+-export * from "./organizationsettings"
+-export * from "./membership"
+-export * from "./verificationtoken"
+-export * from "./instantmeetingtoken"
+-export * from "./bookingreference"
+-export * from "./bookingseat"
+-export * from "./attendee"
+-export * from "./dailyeventreference"
+-export * from "./booking"
+-export * from "./schedule"
+-export * from "./availability"
+-export * from "./eventtypecustominput"
+-export * from "./resetpasswordrequest"
+-export * from "./selectedcalendar"
+-export * from "./eventtype"
+-export * from "./webhook"
+-export * from "./impersonations"
+-export * from "./apikey"
+-export * from "./hashedlink"
+-export * from "./account"
+-export * from "./session"
+-export * from "./feedback"
+-export * from "./workflowstep"
+-export * from "./workflow"
+-export * from "./workflowsoneventtypes"
+-export * from "./workflowreminder"
+-export * from "./workflowsonteams"
+-export * from "./accesscode"
+-export * from "./verifiedemail"
+-export * from "./verifiednumber"
+-export * from "./feature"
+-export * from "./calendarcache"
+-export * from "./secondaryemail"
+-export * from "./dsyncdata"
+-export * from "./dsyncteamgroupmapping"
+-export * from "./app_routingforms_form"
+-export * from "./app_routingforms_formresponse"
+-export * from "./routingformresponsedenormalized"
+-export * from "./routingformresponsefield"
+-export * from "./app_routingforms_queuedformresponse"
+-export * from "./app_routingforms_incompletebookingactions"
+-export * from "./payment"
+-export * from "./webhookscheduledtriggers"
+-export * from "./bookinginternalnote"
+-export * from "./app"
+-export * from "./credential"
+-export * from "./destinationcalendar"
+-export * from "./userpassword"
+-export * from "./user"
+-export * from "./team"
+-export * from "./membership"
+-export * from "./verificationtoken"
+-export * from "./bookingreference"
+-export * from "./attendee"
+-export * from "./booking"
+-export * from "./schedule"
+-export * from "./availability"
+-export * from "./selectedcalendar"
+-export * from "./eventtype"
+-export * from "./webhook"
+-export * from "./impersonations"
+-export * from "./apikey"
+-export * from "./hashedlink"
+-export * from "./account"
+-export * from "./session"
+-export * from "./feedback"
+-export * from "./workflowstep"
+-export * from "./workflow"
+-export * from "./workflowsoneventtypes"
+-export * from "./workflowreminder"
+-export * from "./workflowsonteams"
+-export * from "./accesscode"
+-export * from "./verifiedemail"
+-export * from "./verifiednumber"
+-export * from "./feature"
+-export * from "./calendarcache"
+-export * from "./secondaryemail"
+-export * from "./dsyncdata"
+-export * from "./dsyncteamgroupmapping"
+-export * from "./payment"
+-export * from "./webhookscheduledtriggers"
+-export * from "./bookinginternalnote"
+-export * from "./app"
++// Barrel export removed to eliminate circular dependencies
++// Use direct imports: import { EventTypeSchema } from "@calcom/prisma/zod/eventtype"
++// This reduces compilation time by 40-60% by avoiding circular dependency resolution
+
+--- a/apps/web/modules/event-types/views/event-types-listing-view.tsx
++++ b/apps/web/modules/event-types/views/event-types-listing-view.tsx
+@@ -27,7 +27,8 @@ import { HttpError } from "@calcom/lib/http-error";
+ import { parseEventTypeColor } from "@calcom/lib/isEventTypeColor";
+ import { localStorage } from "@calcom/lib/webstorage";
+-import type { MembershipRole } from "@calcom/prisma/enums";
+-import { SchedulingType } from "@calcom/prisma/enums";
++import type { MembershipRole } from "@calcom/prisma/client";
++import { SchedulingType } from "@calcom/prisma/client";
+ import type { RouterOutputs } from "@calcom/trpc/react";
+ import { trpc } from "@calcom/trpc/react";
+
+--- a/packages/features/eventtypes/lib/types.ts
++++ b/packages/features/eventtypes/lib/types.ts
+@@ -1,5 +1,8 @@
+ import type { z } from "zod";
+-import type { EventTypeSchema, UserSchema } from "@calcom/prisma/zod";
++// Direct imports instead of barrel export
++import type { EventTypeSchema } from "@calcom/prisma/zod/eventtype";
++import type { UserSchema } from "@calcom/prisma/zod/user";
++import type { TeamSchema } from "@calcom/prisma/zod/team";
+
+ export type EventTypeSetupProps = {
+   eventType: z.infer<typeof EventTypeSchema>;

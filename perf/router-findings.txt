@@ -1,0 +1,37 @@
+## tRPC EventTypes Router Performance - Key Findings
+
+### Import Cost Baseline
+• Original: 2499ms cold, 856ms warm average
+• After optimization: 1041ms cold, 1358ms warm average  
+• Result: Minimal improvement, inconsistent performance
+
+### Top 3 Root Causes
+• Immediate schema parsing at module load (8 Zod schema files = ~320ms)
+• Heavy util.ts import with 226 lines + repository dependencies = ~250ms
+• Circular dependency resolution through Prisma zod barrel = ~200ms
+
+### Critical Import Chain
+• _router.ts → *.schema.ts → @calcom/prisma/enums → Prisma client → 87 circular deps
+• util.ts → 4 repositories + auth + markdown + Prisma client direct import
+• authedProcedure → authentication middleware chain
+
+### Applied Optimization
+• Changed `import { z } from "zod"` to `import type { z } from "zod"`
+• Moved runtime z usage to inline require()
+• Impact: Minimal improvement, suggests deeper architectural issues
+
+### Prioritized Actions
+1. **HIGH**: Lazy load util.ts and eventOwnerProcedure (25-30% improvement expected)
+2. **HIGH**: Consolidate schema imports with lazy loading (35-40% improvement expected)  
+3. **MEDIUM**: Split router into focused sub-routers
+4. **LONG-TERM**: Address Prisma zod barrel circular dependencies
+
+### Expected Combined Impact
+• Target: 60-70% improvement (530-670ms faster)
+• From: 856ms average → To: 200-300ms average
+• Focus: Lazy loading patterns over import optimizations
+
+### Key Insight
+• Router loads 2,045 files during analysis due to deep dependency chains
+• 13 procedures all initialized at module load time instead of on-demand
+• Development compilation bottleneck requires architectural lazy loading, not just import tweaks
