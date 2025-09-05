@@ -5,3 +5,4 @@ export const defaultBookerLayoutSettings = {
   defaultLayout: BookerLayouts.MONTH_VIEW,
   enabledLayouts: bookerLayoutOptions,
 };
+export type BookerLayoutSettings = typeof defaultBookerLayoutSettings;

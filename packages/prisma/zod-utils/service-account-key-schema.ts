@@ -17,3 +17,4 @@ export const serviceAccountKeySchema = z.object({
     })
     .or(z.string()),
 });
+export type TServiceAccountKeySchema = z.infer<typeof serviceAccountKeySchema>;

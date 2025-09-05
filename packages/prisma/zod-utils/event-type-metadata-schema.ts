@@ -4,3 +4,5 @@ import { eventTypeMetaDataSchemaWithUntypedApps } from "./event-type-metadata-wi
 
 export const EventTypeMetaDataSchema = eventTypeMetaDataSchemaWithUntypedApps.nullable();
 export type EventTypeMetadata = z.infer<typeof EventTypeMetaDataSchema>;
+export { allManagedEventTypeProps } from "./all-managed-event-type-props";
+export { unlockedManagedEventTypeProps } from "./unlocked-managed-event-type-props";
