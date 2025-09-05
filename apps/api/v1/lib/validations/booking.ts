@@ -8,7 +8,7 @@ import {
   _TeamModel,
   _UserModel,
 } from "@calcom/prisma/zod";
-import { iso8601 } from "@calcom/prisma/zod-utils";
+import { iso8601 } from "@calcom/prisma/zod-utils/iso8601";
 import { extendedBookingCreateBody } from "@calcom/prisma/zod/custom/booking";
 
 import { schemaQueryUserId } from "./shared/queryUserId";
