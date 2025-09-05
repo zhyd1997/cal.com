@@ -21,7 +21,8 @@
     "declarationDir": "types/server",
     "moduleResolution": "node",
     "paths": {
-      "~/*": ["./*"]
+      "~/*": ["./*"],
+      "@calcom/prisma/zod-utils/*": ["../prisma/zod-utils/*"]
     }
   }
 }

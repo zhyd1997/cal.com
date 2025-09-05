@@ -2,7 +2,11 @@
   "extends": "@calcom/tsconfig/react-library.json",
   "compilerOptions": {
     "resolveJsonModule": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@calcom/prisma/zod-utils/*": ["../prisma/zod-utils/*"]
+    }
   },
   "include": [
     "../types/window.d.ts",

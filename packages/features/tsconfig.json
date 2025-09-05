@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": ["/*"]
+      "~/*": ["/*"],
+      "@calcom/prisma/zod-utils/*": ["../prisma/zod-utils/*"]
     },
     "resolveJsonModule": true,
     "esModuleInterop": true
