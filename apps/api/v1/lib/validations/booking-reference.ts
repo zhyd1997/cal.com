@@ -1,5 +1,5 @@
 import { _BookingReferenceModel as BookingReference } from "@calcom/prisma/zod";
-import { denullishShape } from "@calcom/prisma/zod-utils";
+import { denullishShape } from "@calcom/prisma/zod-utils/denullish-shape";
 
 export const schemaBookingReferenceBaseBodyParams = BookingReference.pick({
   type: true,

@@ -9,7 +9,7 @@ import { OrganizationRepository } from "@calcom/lib/server/repository/organizati
 import { prisma } from "@calcom/prisma";
 import { MembershipRole } from "@calcom/prisma/enums";
 import { CreationSource } from "@calcom/prisma/enums";
-import { userMetadata } from "@calcom/prisma/zod-utils";
+import { userMetadata } from "@calcom/prisma/zod-utils/user-metadata";
 import { inviteMembersWithNoInviterPermissionCheck } from "@calcom/trpc/server/routers/viewer/teams/inviteMember/inviteMember.handler";
 
 const verifySchema = z.object({
