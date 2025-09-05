@@ -4,10 +4,15 @@ import { cloneDeep, merge } from "lodash";
 import { v5 as uuidv5 } from "uuid";
 import type { z } from "zod";
 
+// eslint-disable-next-line no-restricted-imports
 import { getCalendar } from "@calcom/app-store/_utils/getCalendar";
+// eslint-disable-next-line no-restricted-imports
 import { FAKE_DAILY_CREDENTIAL } from "@calcom/app-store/dailyvideo/lib/VideoApiAdapter";
+// eslint-disable-next-line no-restricted-imports
 import { appKeysSchema as calVideoKeysSchema } from "@calcom/app-store/dailyvideo/zod";
+// eslint-disable-next-line no-restricted-imports
 import { getLocationFromApp, MeetLocationType, MSTeamsLocationType } from "@calcom/app-store/locations";
+// eslint-disable-next-line no-restricted-imports
 import getApps from "@calcom/app-store/utils";
 import { FeaturesRepository } from "@calcom/features/flags/features.repository";
 import { getUid } from "@calcom/lib/CalEventParser";
@@ -23,8 +28,8 @@ import {
 import { safeStringify } from "@calcom/lib/safeStringify";
 import { CredentialRepository } from "@calcom/lib/server/repository/credential";
 import prisma from "@calcom/prisma";
-import { createdEventSchema } from "@calcom/prisma/zod-utils";
-import type { EventTypeAppMetadataSchema } from "@calcom/prisma/zod-utils";
+import { createdEventSchema } from "@calcom/prisma/zod-utils/created-event-schema";
+import type { EventTypeAppMetadataSchema } from "@calcom/prisma/zod-utils/event-type-app-metadata-schema";
 import type { AdditionalInformation, CalendarEvent, NewCalendarEventType } from "@calcom/types/Calendar";
 import type { CredentialForCalendarService } from "@calcom/types/Credential";
 import type { Event } from "@calcom/types/Event";
@@ -59,7 +64,7 @@ const delegatedCredentialFirst = <T extends { delegatedToId?: string | null }>(a
   return (b.delegatedToId ? 1 : 0) - (a.delegatedToId ? 1 : 0);
 };
 
-const delegatedCredentialLast = <T extends { delegatedToId?: string | null }>(a: T, b: T) => {
+const _delegatedCredentialLast = <T extends { delegatedToId?: string | null }>(a: T, b: T) => {
   return (a.delegatedToId ? 1 : 0) - (b.delegatedToId ? 1 : 0);
 };
 
@@ -1151,9 +1156,9 @@ export default class EventManager {
 
       return Promise.all(result);
     } catch (error) {
-      let message = `Tried to 'updateAllCalendarEvents' but there was no '{thing}' for '${credential?.type}', userId: '${credential?.userId}', bookingId: '${booking?.id}'`;
+      let _message = `Tried to 'updateAllCalendarEvents' but there was no '{thing}' for '${credential?.type}', userId: '${credential?.userId}', bookingId: '${booking?.id}'`;
       if (error instanceof Error) {
-        message = message.replace("{thing}", error.message);
+        _message = _message.replace("{thing}", error.message);
       }
 
       return Promise.resolve(

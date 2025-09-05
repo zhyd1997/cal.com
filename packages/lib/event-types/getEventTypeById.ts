@@ -1,7 +1,9 @@
 import type { Prisma } from "@prisma/client";
 
 //import "server-only";
+// eslint-disable-next-line no-restricted-imports
 import { getLocationGroupedOptions } from "@calcom/app-store/server";
+// eslint-disable-next-line no-restricted-imports
 import { getEventTypeAppData } from "@calcom/app-store/utils";
 import { getBookingFieldsWithSystemFields } from "@calcom/features/bookings/lib/getBookingFields";
 import { getUserAvatarUrl } from "@calcom/lib/getAvatarUrl";
@@ -15,7 +17,8 @@ import { EventTypeRepository } from "@calcom/lib/server/repository/eventTypeRepo
 import { UserRepository } from "@calcom/lib/server/repository/user";
 import type { PrismaClient } from "@calcom/prisma";
 import { SchedulingType, MembershipRole } from "@calcom/prisma/enums";
-import { customInputSchema, eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils";
+import { customInputSchema } from "@calcom/prisma/zod-utils/custom-input-schema";
+import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
 
 import { TRPCError } from "@trpc/server";
 

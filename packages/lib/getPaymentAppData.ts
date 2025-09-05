@@ -1,12 +1,16 @@
 import type { z } from "zod";
 
+// eslint-disable-next-line no-restricted-imports
 import { getEventTypeAppData } from "@calcom/app-store/_utils/getEventTypeAppData";
+// eslint-disable-next-line no-restricted-imports
 import type { appDataSchemas } from "@calcom/app-store/apps.schemas.generated";
+// eslint-disable-next-line no-restricted-imports
 import type { appDataSchema, paymentOptionEnum } from "@calcom/app-store/stripepayment/zod";
+// eslint-disable-next-line no-restricted-imports
 import type { EventTypeAppsList } from "@calcom/app-store/utils";
 import type { BookerEvent } from "@calcom/features/bookings/types";
-import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
-import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils";
+import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
+import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
 
 export function getPaymentAppData(
   _eventType: Pick<BookerEvent, "price" | "currency"> & {

@@ -1,6 +1,7 @@
+// eslint-disable-next-line no-restricted-imports
 import { getAppFromLocationValue } from "@calcom/app-store/utils";
 import { prisma } from "@calcom/prisma";
-import { eventTypeLocations as eventTypeLocationsSchema } from "@calcom/prisma/zod-utils";
+import { eventTypeLocations as eventTypeLocationsSchema } from "@calcom/prisma/zod-utils/event-type-locations";
 
 /**
  * Process event types to add logo information
