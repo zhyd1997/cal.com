@@ -3,7 +3,7 @@ import { z } from "zod";
 import { emailSchema } from "@calcom/lib/emailSchema";
 import { checkUsername } from "@calcom/lib/server/checkUsername";
 import { _UserModel as User } from "@calcom/prisma/zod";
-import { iso8601 } from "@calcom/prisma/zod-utils";
+import { iso8601 } from "@calcom/prisma/zod-utils/iso8601";
 
 import { isValidBase64Image } from "~/lib/utils/isValidBase64Image";
 import { timeZone } from "~/lib/validations/shared/timeZone";
