@@ -13,7 +13,8 @@ import { WorkflowService } from "@calcom/lib/server/service/workflows";
 import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
 import { prisma } from "@calcom/prisma";
 import { WebhookTriggerEvents, WorkflowTriggerEvents } from "@calcom/prisma/enums";
-import { bookingMetadataSchema, type PlatformClientParams } from "@calcom/prisma/zod-utils";
+import { type PlatformClientParams } from "@calcom/prisma/zod-utils/platform-client-params-schema";
+import { bookingMetadataSchema } from "@calcom/prisma/zod-utils/booking-metadata-schema";
 import type { TNoShowInputSchema } from "@calcom/trpc/server/routers/loggedInViewer/markNoShow.schema";
 import { getAllWorkflowsFromEventType } from "@calcom/trpc/server/routers/viewer/workflows/util";
 

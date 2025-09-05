@@ -6,7 +6,7 @@ import type { EventTypeRepository } from "@calcom/lib/server/repository/eventTyp
 import { UserRepository } from "@calcom/lib/server/repository/user";
 import prisma from "@calcom/prisma";
 import { PeriodType } from "@calcom/prisma/enums";
-import type { CustomInputSchema } from "@calcom/prisma/zod-utils";
+import type { CustomInputSchema } from "@calcom/prisma/zod-utils/custom-input-schema";
 import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 
 import { TRPCError } from "@trpc/server";

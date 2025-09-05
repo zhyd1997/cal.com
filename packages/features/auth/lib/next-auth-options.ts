@@ -41,7 +41,8 @@ import slugify from "@calcom/lib/slugify";
 import prisma from "@calcom/prisma";
 import { CreationSource } from "@calcom/prisma/enums";
 import { IdentityProvider, MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema, userMetadata } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
+import { userMetadata } from "@calcom/prisma/zod-utils/user-metadata";
 
 import { getOrgUsernameFromEmail } from "../signup/utils/getOrgUsernameFromEmail";
 import { ErrorCode } from "./ErrorCode";

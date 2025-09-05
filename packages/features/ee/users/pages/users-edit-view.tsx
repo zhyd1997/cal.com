@@ -5,7 +5,7 @@ import { z } from "zod";
 
 import NoSSR from "@calcom/lib/components/NoSSR";
 import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import { getParserWithGeneric } from "@calcom/prisma/zod-utils";
+import { getParserWithGeneric } from "@calcom/prisma/zod-utils/get-parser-with-generic";
 import { trpc } from "@calcom/trpc/react";
 import { showToast } from "@calcom/ui/components/toast";
 

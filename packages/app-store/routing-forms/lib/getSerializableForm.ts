@@ -4,7 +4,7 @@ import type { z } from "zod";
 import { entityPrismaWhereClause } from "@calcom/lib/entityPermissionUtils.server";
 import logger from "@calcom/lib/logger";
 import { safeStringify } from "@calcom/lib/safeStringify";
-import { RoutingFormSettings } from "@calcom/prisma/zod-utils";
+import { RoutingFormSettings } from "@calcom/prisma/zod-utils/routing-form-settings";
 
 import type { SerializableForm, SerializableFormTeamMembers } from "../types/types";
 import type { zodRoutesView, zodFieldsView } from "../zod";

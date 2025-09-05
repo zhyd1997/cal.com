@@ -21,8 +21,8 @@ import { validateBookerLayouts } from "@calcom/lib/validateBookerLayouts";
 import type { PrismaClient } from "@calcom/prisma";
 import { WorkflowTriggerEvents } from "@calcom/prisma/enums";
 import { SchedulingType, EventTypeAutoTranslatedField, RRTimestampBasis } from "@calcom/prisma/enums";
-import { eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils";
-import { eventTypeLocations } from "@calcom/prisma/zod-utils";
+import { eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils/event-type-app-metadata-optional-schema";
+import { eventTypeLocations } from "@calcom/prisma/zod-utils/event-type-locations";
 
 import { TRPCError } from "@trpc/server";
 

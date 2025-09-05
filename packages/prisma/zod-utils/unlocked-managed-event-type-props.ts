@@ -1,0 +1,17 @@
+export const unlockedManagedEventTypeProps = [
+  "hosts",
+  "assignTo",
+  "assignAllTeamMembersToBookings",
+  "useEventTypeDestinationCalendarEmail",
+  "position",
+  "scheduleId",
+  "timeFormat",
+  "price",
+  "currency",
+  "bookingCreationEmailsDisabled",
+  "rescheduleEmailsDisabled",
+  "cancellationEmailsDisabled",
+  "bookingRescheduleLimitType",
+  "bookingLimitsType",
+  "bookingLimitsDateType",
+] as const;

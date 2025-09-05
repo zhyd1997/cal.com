@@ -10,7 +10,7 @@ import type {
   ApiSuccessResponseWithoutData,
   RoutingFormSearchParams,
 } from "@calcom/platform-types";
-import type { BookerLayouts } from "@calcom/prisma/zod-utils";
+import type { BookerLayouts } from "@calcom/prisma/zod-utils/booker-layouts-enum";
 import type { Slot } from "@calcom/trpc/server/routers/viewer/slots/types";
 
 import type { UseCreateBookingInput } from "../hooks/bookings/useCreateBooking";

@@ -1,6 +1,6 @@
 import { subdomainSuffix, getOrgFullOrigin } from "@calcom/features/ee/organizations/lib/orgDomains";
 import { prisma } from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 export const getBrand = async (orgId: number | null) => {
   if (!orgId) {

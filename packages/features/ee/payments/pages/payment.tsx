@@ -7,7 +7,7 @@ import { shouldHideBrandingForEvent } from "@calcom/lib/hideBranding";
 import prisma from "@calcom/prisma";
 import { BookingStatus } from "@calcom/prisma/enums";
 import { paymentDataSelect } from "@calcom/prisma/selects/payment";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 import type { inferSSRProps } from "@calcom/types/inferSSRProps";
 
 export type PaymentPageProps = inferSSRProps<typeof getServerSideProps>;

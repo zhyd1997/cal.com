@@ -14,7 +14,7 @@ import { WEBAPP_URL } from "@calcom/lib/constants";
 import { ProfileRepository } from "@calcom/lib/server/repository/profile";
 import { prisma } from "@calcom/prisma";
 import { MembershipRole, SchedulingType, TimeUnit, WorkflowTriggerEvents } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 import type { Schedule } from "@calcom/types/schedule";
 
 import { createRoutingForm } from "../lib/test-helpers/routingFormHelpers";

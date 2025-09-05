@@ -1,8 +1,10 @@
 import { z } from "zod";
 
 import { handleErrorsJson } from "@calcom/lib/errors";
-import type { GetRecordingsResponseSchema, GetAccessLinkResponseSchema } from "@calcom/prisma/zod-utils";
-import { getRecordingsResponseSchema, getAccessLinkResponseSchema } from "@calcom/prisma/zod-utils";
+import type { GetRecordingsResponseSchema } from "@calcom/prisma/zod-utils/get-recordings-response-schema";
+import type { GetAccessLinkResponseSchema } from "@calcom/prisma/zod-utils/get-access-link-response-schema";
+import { getRecordingsResponseSchema } from "@calcom/prisma/zod-utils/get-recordings-response-schema";
+import { getAccessLinkResponseSchema } from "@calcom/prisma/zod-utils/get-access-link-response-schema";
 import type { CalendarEvent } from "@calcom/types/Calendar";
 import type { PartialReference } from "@calcom/types/EventManager";
 import type { VideoApiAdapter, VideoCallData } from "@calcom/types/VideoApiAdapter";

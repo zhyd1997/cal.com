@@ -8,7 +8,7 @@ import { z } from "zod";
 
 import { Dialog } from "@calcom/features/components/controlled-dialog";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { serviceAccountKeySchema } from "@calcom/prisma/zod-utils";
+import { serviceAccountKeySchema } from "@calcom/prisma/zod-utils/service-account-key-schema";
 import { trpc, type RouterOutputs } from "@calcom/trpc";
 import { Button } from "@calcom/ui/components/button";
 import { DialogContent, DialogFooter, DialogClose } from "@calcom/ui/components/dialog";

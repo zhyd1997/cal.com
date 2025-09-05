@@ -3,7 +3,7 @@ import { purchaseTeamOrOrgSubscription } from "@calcom/features/ee/teams/lib/pay
 import { IS_TEAM_BILLING_ENABLED, WEBAPP_URL } from "@calcom/lib/constants";
 import { isOrganisationAdmin } from "@calcom/lib/server/queries/organisations";
 import { prisma } from "@calcom/prisma";
-import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils/team-metadata-strict-schema";
 
 import { TRPCError } from "@trpc/server";
 

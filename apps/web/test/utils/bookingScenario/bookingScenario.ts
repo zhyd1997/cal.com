@@ -26,9 +26,9 @@ import type {
 } from "@calcom/prisma/client";
 import type { PaymentOption, SchedulingType, SMSLockState, TimeUnit } from "@calcom/prisma/enums";
 import type { BookingStatus } from "@calcom/prisma/enums";
-import type { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { userMetadataType } from "@calcom/prisma/zod-utils";
-import type { eventTypeBookingFields } from "@calcom/prisma/zod-utils";
+import type { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
+import type { userMetadataType } from "@calcom/prisma/zod-utils/user-metadata";
+import type { eventTypeBookingFields } from "@calcom/prisma/zod-utils/event-type-booking-fields";
 import type { AppMeta } from "@calcom/types/App";
 import type {
   CalendarEvent,

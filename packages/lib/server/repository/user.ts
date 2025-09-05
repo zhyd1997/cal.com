@@ -10,7 +10,7 @@ import type { Prisma, User as UserType } from "@calcom/prisma/client";
 import type { CreationSource } from "@calcom/prisma/enums";
 import { MembershipRole, BookingStatus } from "@calcom/prisma/enums";
 import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import { userMetadata } from "@calcom/prisma/zod-utils";
+import { userMetadata } from "@calcom/prisma/zod-utils/user-metadata";
 import type { UpId, UserProfile } from "@calcom/types/UserProfile";
 
 import { DEFAULT_SCHEDULE, getAvailabilityFromSchedule } from "../../availability";

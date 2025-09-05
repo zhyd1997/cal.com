@@ -6,7 +6,7 @@ import {
   WORKFLOW_TEMPLATES,
   WORKFLOW_TRIGGER_EVENTS,
 } from "@calcom/ee/workflows/lib/constants";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 
 const ZWorkflow = z.object({
   id: z.number(),

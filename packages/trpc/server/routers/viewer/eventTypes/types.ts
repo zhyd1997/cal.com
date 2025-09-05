@@ -3,13 +3,11 @@ import { z } from "zod";
 import { templateTypeEnum } from "@calcom/features/calAIPhone/zod-utils";
 import { MAX_SEATS_PER_TIME_SLOT } from "@calcom/lib/constants";
 import { _DestinationCalendarModel, _EventTypeModel } from "@calcom/prisma/zod";
-import {
-  customInputSchema,
-  EventTypeMetaDataSchema,
-  stringOrNumber,
-  rrSegmentQueryValueSchema,
-} from "@calcom/prisma/zod-utils";
-import { eventTypeBookingFields } from "@calcom/prisma/zod-utils";
+import { customInputSchema } from "@calcom/prisma/zod-utils/custom-input-schema";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
+import { stringOrNumber } from "@calcom/prisma/zod-utils/string-or-number";
+import { rrSegmentQueryValueSchema } from "@calcom/prisma/zod-utils/rr-segment-query-value-schema";
+import { eventTypeBookingFields } from "@calcom/prisma/zod-utils/event-type-booking-fields";
 
 const hashedLinkInputSchema = z
   .object({

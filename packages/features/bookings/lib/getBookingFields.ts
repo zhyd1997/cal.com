@@ -11,12 +11,10 @@ import { getFieldIdentifier } from "@calcom/features/form-builder/utils/getField
 import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
 import slugify from "@calcom/lib/slugify";
 import { EventTypeCustomInputType } from "@calcom/prisma/enums";
-import {
-  BookingFieldTypeEnum,
-  customInputSchema,
-  eventTypeBookingFields,
-  EventTypeMetaDataSchema,
-} from "@calcom/prisma/zod-utils";
+import { customInputSchema } from "@calcom/prisma/zod-utils/custom-input-schema";
+import { eventTypeBookingFields } from "@calcom/prisma/zod-utils/event-type-booking-fields";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
+import { BookingFieldTypeEnum } from "@calcom/prisma/zod-utils/booking-field-type-enum";
 
 type Fields = z.infer<typeof eventTypeBookingFields>;
 

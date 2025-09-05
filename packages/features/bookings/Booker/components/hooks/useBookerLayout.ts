@@ -5,8 +5,8 @@ import { useEmbedType, useEmbedUiConfig, useIsEmbed } from "@calcom/embed-core/e
 import { useBookerStoreContext } from "@calcom/features/bookings/Booker/BookerStoreProvider";
 import type { BookerEvent } from "@calcom/features/bookings/types";
 import useMediaQuery from "@calcom/lib/hooks/useMediaQuery";
-import type { BookerLayouts } from "@calcom/prisma/zod-utils";
-import { defaultBookerLayoutSettings } from "@calcom/prisma/zod-utils";
+import type { BookerLayouts } from "@calcom/prisma/zod-utils/booker-layouts-enum";
+import { defaultBookerLayoutSettings } from "@calcom/prisma/zod-utils/default-booker-layout-settings";
 
 import { extraDaysConfig } from "../../config";
 import type { BookerLayout } from "../../types";

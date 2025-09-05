@@ -25,12 +25,10 @@ import type { Prisma } from "@calcom/prisma/client";
 import type { Team, User } from "@calcom/prisma/client";
 import type { OrganizationOnboarding } from "@calcom/prisma/client";
 import { MembershipRole, CreationSource } from "@calcom/prisma/enums";
-import {
-  userMetadata,
-  orgOnboardingInvitedMembersSchema,
-  orgOnboardingTeamsSchema,
-} from "@calcom/prisma/zod-utils";
-import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils";
+import { userMetadata } from "@calcom/prisma/zod-utils/user-metadata";
+import { orgOnboardingInvitedMembersSchema } from "@calcom/prisma/zod-utils/org-onboarding-invited-members-schema";
+import { orgOnboardingTeamsSchema } from "@calcom/prisma/zod-utils/org-onboarding-teams-schema";
+import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils/team-metadata-strict-schema";
 import { createTeamsHandler } from "@calcom/trpc/server/routers/viewer/organizations/createTeams.handler";
 import { inviteMembersWithNoInviterPermissionCheck } from "@calcom/trpc/server/routers/viewer/teams/inviteMember/inviteMember.handler";
 

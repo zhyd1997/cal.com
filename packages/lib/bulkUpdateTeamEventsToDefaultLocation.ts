@@ -1,7 +1,7 @@
 import type { LocationObject } from "@calcom/app-store/locations";
 import { getAppFromSlug } from "@calcom/app-store/utils";
 import type { PrismaClient } from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 import { TRPCError } from "@trpc/server";
 

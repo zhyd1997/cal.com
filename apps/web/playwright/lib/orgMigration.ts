@@ -9,7 +9,8 @@ import type { Team, User } from "@calcom/prisma/client";
 import { Prisma } from "@calcom/prisma/client";
 import { RedirectType } from "@calcom/prisma/enums";
 import type { MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema, teamMetadataStrictSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
+import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils/team-metadata-strict-schema";
 
 const log = logger.getSubLogger({ prefix: ["orgMigration"] });
 

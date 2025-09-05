@@ -6,8 +6,8 @@ import { safeStringify } from "@calcom/lib/safeStringify";
 import { prisma } from "@calcom/prisma";
 import { MembershipRole } from "@calcom/prisma/enums";
 import type { CreationSource } from "@calcom/prisma/enums";
-import type { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import type { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 import { createAProfileForAnExistingUser } from "../../createAProfileForAnExistingUser";
 import { getParsedTeam } from "./teamUtils";

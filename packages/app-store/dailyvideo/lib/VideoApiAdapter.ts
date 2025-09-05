@@ -3,12 +3,11 @@ import { z } from "zod";
 import { getDailyAppKeys } from "@calcom/app-store/dailyvideo/lib/getDailyAppKeys";
 import { fetcher } from "@calcom/lib/dailyApiFetcher";
 import { prisma } from "@calcom/prisma";
-import type { GetRecordingsResponseSchema, GetAccessLinkResponseSchema } from "@calcom/prisma/zod-utils";
-import {
-  getRecordingsResponseSchema,
-  getAccessLinkResponseSchema,
-  recordingItemSchema,
-} from "@calcom/prisma/zod-utils";
+import type { GetRecordingsResponseSchema } from "@calcom/prisma/zod-utils/get-recordings-response-schema";
+import type { GetAccessLinkResponseSchema } from "@calcom/prisma/zod-utils/get-access-link-response-schema";
+import { getRecordingsResponseSchema } from "@calcom/prisma/zod-utils/get-recordings-response-schema";
+import { getAccessLinkResponseSchema } from "@calcom/prisma/zod-utils/get-access-link-response-schema";
+import { recordingItemSchema } from "@calcom/prisma/zod-utils/recording-item-schema";
 import type { CalendarEvent } from "@calcom/types/Calendar";
 import type { CredentialForCalendarService } from "@calcom/types/Credential";
 import type { PartialReference } from "@calcom/types/EventManager";

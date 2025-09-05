@@ -15,10 +15,12 @@ import { getTranslation } from "@calcom/lib/server/i18n";
 import { bookingMinimalSelect, prisma } from "@calcom/prisma";
 import { AppCategories, BookingStatus } from "@calcom/prisma/enums";
 import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import type { EventTypeAppMetadataSchema, EventTypeMetadata } from "@calcom/prisma/zod-utils";
-import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils";
-import { EventTypeMetaDataSchema, eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils";
-import { userMetadata as userMetadataSchema } from "@calcom/prisma/zod-utils";
+import type { EventTypeAppMetadataSchema } from "@calcom/prisma/zod-utils/event-type-app-metadata-schema";
+import type { EventTypeMetadata } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
+import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
+import { eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils/event-type-app-metadata-optional-schema";
+import { userMetadata as userMetadataSchema } from "@calcom/prisma/zod-utils/user-metadata";
 
 type App = {
   slug: string;

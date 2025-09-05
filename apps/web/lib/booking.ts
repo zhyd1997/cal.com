@@ -4,7 +4,7 @@ import { workflowSelect } from "@calcom/features/ee/workflows/lib/getAllWorkflow
 import prisma from "@calcom/prisma";
 import type { Prisma } from "@calcom/prisma/client";
 import { BookingStatus } from "@calcom/prisma/enums";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 
 export const getEventTypesFromDB = async (id: number) => {
   const userSelect = {

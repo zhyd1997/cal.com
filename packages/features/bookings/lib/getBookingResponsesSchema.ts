@@ -3,8 +3,9 @@ import z from "zod";
 
 import type { ALL_VIEWS } from "@calcom/features/form-builder/schema";
 import { dbReadResponseSchema, fieldTypesSchemaMap } from "@calcom/features/form-builder/schema";
-import type { eventTypeBookingFields } from "@calcom/prisma/zod-utils";
-import { bookingResponses, emailSchemaRefinement } from "@calcom/prisma/zod-utils";
+import type { eventTypeBookingFields } from "@calcom/prisma/zod-utils/event-type-booking-fields";
+import { bookingResponses } from "@calcom/prisma/zod-utils/booking-responses";
+import { emailSchemaRefinement } from "@calcom/prisma/zod-utils/email-schema-refinement";
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type View = ALL_VIEWS | (string & {});

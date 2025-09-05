@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { optionToValueSchema } from "@calcom/prisma/zod-utils";
+import { optionToValueSchema } from "@calcom/prisma/zod-utils/option-to-value-schema";
 
 export const userBodySchema = z
   .object({

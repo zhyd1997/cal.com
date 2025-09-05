@@ -1,6 +1,6 @@
 import z from "zod";
 
-import { RoutingFormSettings } from "@calcom/prisma/zod-utils";
+import { RoutingFormSettings } from "@calcom/prisma/zod-utils/routing-form-settings";
 
 import { zodFields, zodRoutes } from "../zod";
 

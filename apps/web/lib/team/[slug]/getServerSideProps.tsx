@@ -17,7 +17,7 @@ import { stripMarkdown } from "@calcom/lib/stripMarkdown";
 import prisma from "@calcom/prisma";
 import type { Team, OrganizationSettings } from "@calcom/prisma/client";
 import { RedirectType } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 import { handleOrgRedirect } from "@lib/handleOrgRedirect";
 

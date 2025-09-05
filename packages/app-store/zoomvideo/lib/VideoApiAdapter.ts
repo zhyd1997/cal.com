@@ -11,7 +11,7 @@ import logger from "@calcom/lib/logger";
 import { getPiiFreeCalendarEvent } from "@calcom/lib/piiFreeData";
 import { safeStringify } from "@calcom/lib/safeStringify";
 import prisma from "@calcom/prisma";
-import { Frequency } from "@calcom/prisma/zod-utils";
+import { Frequency } from "@calcom/prisma/zod-utils/frequency";
 import type { CalendarEvent } from "@calcom/types/Calendar";
 import type { CredentialPayload } from "@calcom/types/Credential";
 import type { PartialReference } from "@calcom/types/EventManager";

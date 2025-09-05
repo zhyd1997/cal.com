@@ -6,7 +6,7 @@ import { vi } from "vitest";
 import type { StoreApi } from "zustand";
 
 import dayjs from "@calcom/dayjs";
-import { BookerLayouts } from "@calcom/prisma/zod-utils";
+import { BookerLayouts } from "@calcom/prisma/zod-utils/booker-layouts-enum";
 
 import { BookerStoreContext } from "../BookerStoreProvider";
 import type { BookerStore } from "../store";

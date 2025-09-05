@@ -11,7 +11,8 @@ import { locationsResolver } from "@calcom/lib/event-types/utils/locationsResolv
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import type { LocationObject } from "@calcom/lib/location";
 import type { AppCategories } from "@calcom/prisma/enums";
-import type { EventTypeMetaDataSchema, eventTypeBookingFields } from "@calcom/prisma/zod-utils";
+import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
+import type { eventTypeBookingFields } from "@calcom/prisma/zod-utils/event-type-booking-fields";
 import { Avatar } from "@calcom/ui/components/avatar";
 import { Button } from "@calcom/ui/components/button";
 import { Form } from "@calcom/ui/components/form";

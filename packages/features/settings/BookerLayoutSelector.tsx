@@ -5,8 +5,9 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import ServerTrans from "@calcom/lib/components/ServerTrans";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { BookerLayouts, defaultBookerLayoutSettings } from "@calcom/prisma/zod-utils";
-import { bookerLayoutOptions, type BookerLayoutSettings } from "@calcom/prisma/zod-utils";
+import { BookerLayouts } from "@calcom/prisma/zod-utils/booker-layouts-enum";
+import { defaultBookerLayoutSettings, type BookerLayoutSettings } from "@calcom/prisma/zod-utils/default-booker-layout-settings";
+import { bookerLayoutOptions } from "@calcom/prisma/zod-utils/booker-layout-options";
 import type { RouterOutputs } from "@calcom/trpc/react";
 import classNames from "@calcom/ui/classNames";
 import { Button } from "@calcom/ui/components/button";

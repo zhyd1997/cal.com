@@ -23,7 +23,7 @@ import { type User as UserType, type UserPassword, Prisma } from "@calcom/prisma
 import type { Profile as ProfileType } from "@calcom/prisma/client";
 import type { CreationSource } from "@calcom/prisma/enums";
 import { MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 import { TRPCError } from "@trpc/server";
 

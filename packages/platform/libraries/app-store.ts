@@ -22,7 +22,7 @@ export { getEnabledAppsFromCredentials };
 
 export { getConnectedApps } from "@calcom/lib/getConnectedApps";
 
-export type { TServiceAccountKeySchema } from "@calcom/prisma/zod-utils";
+export type { TServiceAccountKeySchema } from "@calcom/prisma/zod-utils/service-account-key-schema";
 
 export type { ConnectedApps } from "@calcom/lib/getConnectedApps";
 

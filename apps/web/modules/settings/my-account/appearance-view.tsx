@@ -18,7 +18,7 @@ import useGetBrandingColours from "@calcom/lib/getBrandColours";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import useTheme from "@calcom/lib/hooks/useTheme";
 import { validateBookerLayouts } from "@calcom/lib/validateBookerLayouts";
-import type { userMetadata } from "@calcom/prisma/zod-utils";
+import type { userMetadata } from "@calcom/prisma/zod-utils/user-metadata";
 import { trpc } from "@calcom/trpc/react";
 import type { RouterOutputs } from "@calcom/trpc/react";
 import { Alert } from "@calcom/ui/components/alert";

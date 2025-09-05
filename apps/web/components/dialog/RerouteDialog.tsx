@@ -22,7 +22,7 @@ import { useBookerUrl } from "@calcom/lib/hooks/useBookerUrl";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import type { EventType, User, Team, Attendee, Booking as PrismaBooking } from "@calcom/prisma/client";
 import { SchedulingType } from "@calcom/prisma/enums";
-import type { bookingMetadataSchema } from "@calcom/prisma/zod-utils";
+import type { bookingMetadataSchema } from "@calcom/prisma/zod-utils/booking-metadata-schema";
 import type { RouterOutputs } from "@calcom/trpc/react";
 import { trpc } from "@calcom/trpc/react";
 import type { Ensure } from "@calcom/types/utils";

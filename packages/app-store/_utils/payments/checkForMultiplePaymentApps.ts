@@ -1,6 +1,6 @@
 import type z from "zod";
 
-import type { eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils";
+import type { eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils/event-type-app-metadata-optional-schema";
 
 import type { appDataSchemas } from "../../apps.schemas.generated";
 

@@ -6,10 +6,11 @@ import type { EventLocationType } from "@calcom/lib/location";
 import type { AttributesQueryValue } from "@calcom/lib/raqb/types";
 import type { EventTypeTranslation } from "@calcom/prisma/client";
 import type { PeriodType, SchedulingType } from "@calcom/prisma/enums";
-import type { BookerLayoutSettings, eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils";
-import type { customInputSchema } from "@calcom/prisma/zod-utils";
-import type { eventTypeBookingFields } from "@calcom/prisma/zod-utils";
-import type { eventTypeColor } from "@calcom/prisma/zod-utils";
+import type { BookerLayoutSettings } from "@calcom/prisma/zod-utils/default-booker-layout-settings";
+import type { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
+import type { customInputSchema } from "@calcom/prisma/zod-utils/custom-input-schema";
+import type { eventTypeBookingFields } from "@calcom/prisma/zod-utils/event-type-booking-fields";
+import type { eventTypeColor } from "@calcom/prisma/zod-utils/event-type-color";
 import type { RouterOutputs, RouterInputs } from "@calcom/trpc/react";
 import type { RecurringEvent } from "@calcom/types/Calendar";
 

@@ -23,8 +23,9 @@ import { WorkflowService } from "@calcom/lib/server/service/workflows";
 import type { PrismaClient } from "@calcom/prisma";
 import type { SchedulingType } from "@calcom/prisma/enums";
 import { BookingStatus, WebhookTriggerEvents, WorkflowTriggerEvents } from "@calcom/prisma/enums";
-import type { PlatformClientParams } from "@calcom/prisma/zod-utils";
-import { EventTypeMetaDataSchema, eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils";
+import type { PlatformClientParams } from "@calcom/prisma/zod-utils/platform-client-params-schema";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
+import { eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils/event-type-app-metadata-optional-schema";
 import { getAllWorkflowsFromEventType } from "@calcom/trpc/server/routers/viewer/workflows/util";
 import type { AdditionalInformation, CalendarEvent } from "@calcom/types/Calendar";
 

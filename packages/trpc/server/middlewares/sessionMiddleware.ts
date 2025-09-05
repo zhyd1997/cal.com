@@ -7,7 +7,8 @@ import { safeStringify } from "@calcom/lib/safeStringify";
 import { ProfileRepository } from "@calcom/lib/server/repository/profile";
 import { UserRepository } from "@calcom/lib/server/repository/user";
 import prisma from "@calcom/prisma";
-import { teamMetadataSchema, userMetadata } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
+import { userMetadata } from "@calcom/prisma/zod-utils/user-metadata";
 
 import { TRPCError } from "@trpc/server";
 

@@ -15,8 +15,8 @@ import { ProfileRepository } from "@calcom/lib/server/repository/profile";
 import { UserRepository } from "@calcom/lib/server/repository/user";
 import prisma from "@calcom/prisma";
 import { MembershipRole, SchedulingType } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import { eventTypeMetaDataSchemaWithUntypedApps } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
+import { eventTypeMetaDataSchemaWithUntypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-untyped-apps";
 
 import { TRPCError } from "@trpc/server";
 

@@ -13,7 +13,7 @@ import {
   EventTypeMetaDataSchema,
   allManagedEventTypeProps,
   unlockedManagedEventTypeProps,
-} from "@calcom/prisma/zod-utils";
+} from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 
 import { getBookerBaseUrlSync } from "../../../getBookerUrl/client";
 import { getTeam, getOrg } from "../../repository/team";

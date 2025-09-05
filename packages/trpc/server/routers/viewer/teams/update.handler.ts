@@ -8,7 +8,7 @@ import { uploadLogo } from "@calcom/lib/server/avatar";
 import { isTeamAdmin } from "@calcom/lib/server/queries/teams";
 import { prisma } from "@calcom/prisma";
 import { RedirectType, RRTimestampBasis } from "@calcom/prisma/enums";
-import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils/team-metadata-strict-schema";
 
 import { TRPCError } from "@trpc/server";
 

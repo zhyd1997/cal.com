@@ -1,7 +1,7 @@
 import type { z } from "zod";
 
 import type { BookerEvent } from "@calcom/features/bookings/types";
-import type { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils";
+import type { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
 
 export type EventTypeApps = NonNullable<
   NonNullable<z.infer<typeof eventTypeMetaDataSchemaWithTypedApps>>["apps"]

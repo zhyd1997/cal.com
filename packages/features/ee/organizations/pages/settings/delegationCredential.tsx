@@ -6,7 +6,7 @@ import { useForm, Controller, useFormContext } from "react-hook-form";
 import { Dialog } from "@calcom/features/components/controlled-dialog";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import type { ServiceAccountKey } from "@calcom/lib/server/serviceAccountKey";
-import { serviceAccountKeySchema } from "@calcom/prisma/zod-utils";
+import { serviceAccountKeySchema } from "@calcom/prisma/zod-utils/service-account-key-schema";
 import { trpc } from "@calcom/trpc/react";
 import { Badge } from "@calcom/ui/components/badge";
 import { InfoBadge } from "@calcom/ui/components/badge";

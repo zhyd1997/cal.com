@@ -10,7 +10,7 @@ import type { EventTypeSetup, SettingsToggleClassNames } from "@calcom/features/
 import type { FormValues } from "@calcom/features/eventtypes/lib/types";
 import ServerTrans from "@calcom/lib/components/ServerTrans";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 import classNames from "@calcom/ui/classNames";
 import { Select } from "@calcom/ui/components/form";
 import { CheckboxField } from "@calcom/ui/components/form";

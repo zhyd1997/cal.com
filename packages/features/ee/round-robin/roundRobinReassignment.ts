@@ -29,8 +29,9 @@ import logger from "@calcom/lib/logger";
 import { getTranslation } from "@calcom/lib/server/i18n";
 import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
 import { prisma } from "@calcom/prisma";
-import { userMetadata as userMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { EventTypeMetadata, PlatformClientParams } from "@calcom/prisma/zod-utils";
+import { userMetadata as userMetadataSchema } from "@calcom/prisma/zod-utils/user-metadata";
+import type { EventTypeMetadata } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
+import type { PlatformClientParams } from "@calcom/prisma/zod-utils/platform-client-params-schema";
 import type { CalendarEvent } from "@calcom/types/Calendar";
 
 import { handleRescheduleEventManager } from "./handleRescheduleEventManager";

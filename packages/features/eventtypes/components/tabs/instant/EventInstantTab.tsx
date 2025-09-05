@@ -1,6 +1,6 @@
 import type { EventTypeSetupProps } from "@calcom/features/eventtypes/lib/types";
 import { getPaymentAppData } from "@calcom/lib/getPaymentAppData";
-import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils";
+import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
 
 import InstantEventController from "./InstantEventController";
 

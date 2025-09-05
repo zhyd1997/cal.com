@@ -3,7 +3,7 @@ import type { AppCategories, Prisma } from "@prisma/client";
 import { PaymentServiceMap } from "@calcom/app-store/payment.services.generated";
 import type { EventTypeAppsList } from "@calcom/app-store/utils";
 import type { CompleteEventType } from "@calcom/prisma/zod";
-import { eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils";
+import { eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils/event-type-app-metadata-optional-schema";
 import type { CalendarEvent } from "@calcom/types/Calendar";
 import type { IAbstractPaymentService } from "@calcom/types/PaymentService";
 

@@ -12,7 +12,7 @@ import type {
   FormValues,
   EventTypeApps,
 } from "@calcom/features/eventtypes/lib/types";
-import type { customInputSchema } from "@calcom/prisma/zod-utils";
+import type { customInputSchema } from "@calcom/prisma/zod-utils/custom-input-schema";
 import type { RouterOutputs } from "@calcom/trpc/react";
 import { Form } from "@calcom/ui/components/form";
 import type { VerticalTabItemProps } from "@calcom/ui/components/navigation";

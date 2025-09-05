@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import type { z } from "zod";
 
 import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { orgSettingsSchema } from "@calcom/prisma/zod-utils";
+import type { orgSettingsSchema } from "@calcom/prisma/zod-utils/org-settings-schema";
 import { trpc } from "@calcom/trpc/react";
 import { Form } from "@calcom/ui/components/form";
 import { TextField } from "@calcom/ui/components/form";

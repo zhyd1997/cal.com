@@ -10,7 +10,7 @@ import { getTranslation } from "@calcom/lib/server/i18n";
 import { deleteMeeting } from "@calcom/lib/videoClient";
 import prisma from "@calcom/prisma";
 import { BookingStatus } from "@calcom/prisma/enums";
-import type { EventTypeMetadata } from "@calcom/prisma/zod-utils";
+import type { EventTypeMetadata } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 import type { Person } from "@calcom/types/Calendar";
 
 import { getCalendar } from "../../_utils/getCalendar";

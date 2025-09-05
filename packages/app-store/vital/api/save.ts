@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { ZodError } from "zod";
 
 import prisma from "@calcom/prisma";
-import { vitalSettingsUpdateSchema } from "@calcom/prisma/zod-utils";
+import { vitalSettingsUpdateSchema } from "@calcom/prisma/zod-utils/vital-settings-update-schema";
 
 export type VitalSettingsResponse = {
   connected: boolean;

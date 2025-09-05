@@ -20,7 +20,7 @@ import { handlePaymentSuccess } from "@calcom/lib/payment/handlePaymentSuccess";
 import { safeStringify } from "@calcom/lib/safeStringify";
 import { prisma } from "@calcom/prisma";
 import { BookingStatus } from "@calcom/prisma/enums";
-import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils";
+import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
 
 const log = logger.getSubLogger({ prefix: ["[paymentWebhook]"] });
 

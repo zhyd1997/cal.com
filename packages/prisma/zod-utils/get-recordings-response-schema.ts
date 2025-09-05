@@ -1,6 +1,6 @@
 import z from "zod";
 
-import { recordingItemsSchema } from "./recording-types";
+import { recordingItemsSchema } from "./recording-items-schema";
 
 export const getRecordingsResponseSchema = z.union([
   z.object({

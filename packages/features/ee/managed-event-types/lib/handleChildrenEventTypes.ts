@@ -7,8 +7,9 @@ import { getTranslation } from "@calcom/lib/server/i18n";
 import type { PrismaClient } from "@calcom/prisma";
 import { SchedulingType } from "@calcom/prisma/enums";
 import { _EventTypeModel } from "@calcom/prisma/zod";
-import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils";
-import { allManagedEventTypeProps, unlockedManagedEventTypeProps } from "@calcom/prisma/zod-utils";
+import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
+import { allManagedEventTypeProps } from "@calcom/prisma/zod-utils/all-managed-event-type-props";
+import { unlockedManagedEventTypeProps } from "@calcom/prisma/zod-utils/unlocked-managed-event-type-props";
 
 interface handleChildrenEventTypesProps {
   eventTypeId: number;

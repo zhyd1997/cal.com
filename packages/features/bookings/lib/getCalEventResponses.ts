@@ -7,7 +7,7 @@ import { contructEmailFromPhoneNumber } from "@calcom/lib/contructEmailFromPhone
 import { getBookingWithResponses } from "@calcom/lib/getBooking";
 import { HttpError } from "@calcom/lib/http-error";
 import logger from "@calcom/lib/logger";
-import { eventTypeBookingFields } from "@calcom/prisma/zod-utils";
+import { eventTypeBookingFields } from "@calcom/prisma/zod-utils/event-type-booking-fields";
 import type { CalendarEvent } from "@calcom/types/Calendar";
 
 const log = logger.getSubLogger({ prefix: ["[getCalEventResponses]"] });

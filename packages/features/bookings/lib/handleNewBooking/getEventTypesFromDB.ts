@@ -7,11 +7,9 @@ import { parseRecurringEvent } from "@calcom/lib/isRecurringEvent";
 import { withSelectedCalendars } from "@calcom/lib/server/repository/user";
 import prisma, { userSelect } from "@calcom/prisma";
 import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import {
-  EventTypeMetaDataSchema,
-  customInputSchema,
-  rrSegmentQueryValueSchema,
-} from "@calcom/prisma/zod-utils";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
+import { customInputSchema } from "@calcom/prisma/zod-utils/custom-input-schema";
+import { rrSegmentQueryValueSchema } from "@calcom/prisma/zod-utils/rr-segment-query-value-schema";
 
 export const getEventTypesFromDB = async (eventTypeId: number) => {
   try {

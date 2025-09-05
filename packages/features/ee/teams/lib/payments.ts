@@ -14,8 +14,8 @@ import {
 import logger from "@calcom/lib/logger";
 import { safeStringify } from "@calcom/lib/safeStringify";
 import prisma from "@calcom/prisma";
-import { BillingPeriod } from "@calcom/prisma/zod-utils";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { BillingPeriod } from "@calcom/prisma/zod-utils/billing-period";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 const log = logger.getSubLogger({ prefix: ["teams/lib/payments"] });
 const teamPaymentMetadataSchema = z.object({
@@ -245,8 +245,11 @@ export const purchaseTeamOrOrgSubscription = async (input: {
    * If the organization has a custom price per seat, it will create a new price in stripe and return its ID.
    */
   async function getFixedPrice() {
+/* eslint-disable-next-line turbo/no-undeclared-env-vars */
     const fixedPriceId = isOrg
+/* eslint-disable-next-line turbo/no-undeclared-env-vars */
       ? process.env.STRIPE_ORG_MONTHLY_PRICE_ID
+/* eslint-disable-next-line turbo/no-undeclared-env-vars */
       : process.env.STRIPE_TEAM_MONTHLY_PRICE_ID;
 
     if (!fixedPriceId) {

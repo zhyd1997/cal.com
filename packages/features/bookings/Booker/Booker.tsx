@@ -19,7 +19,7 @@ import { scrollIntoViewSmooth } from "@calcom/lib/browser/browser.utils";
 import { PUBLIC_INVALIDATE_AVAILABLE_SLOTS_ON_BOOKING_FORM } from "@calcom/lib/constants";
 import { CLOUDFLARE_SITE_ID, CLOUDFLARE_USE_TURNSTILE_IN_BOOKER } from "@calcom/lib/constants";
 import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { BookerLayouts } from "@calcom/prisma/zod-utils";
+import { BookerLayouts } from "@calcom/prisma/zod-utils/booker-layouts-enum";
 import classNames from "@calcom/ui/classNames";
 import { UnpublishedEntity } from "@calcom/ui/components/unpublished-entity";
 

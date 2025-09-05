@@ -2,7 +2,7 @@ import { cubicBezier, useAnimate } from "framer-motion";
 import { useReducedMotion } from "framer-motion";
 import { useEffect } from "react";
 
-import { BookerLayouts } from "@calcom/prisma/zod-utils";
+import { BookerLayouts } from "@calcom/prisma/zod-utils/booker-layouts-enum";
 
 import type { BookerLayout, BookerState } from "./types";
 

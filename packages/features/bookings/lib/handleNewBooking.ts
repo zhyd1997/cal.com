@@ -90,11 +90,9 @@ import {
   WorkflowTriggerEvents,
 } from "@calcom/prisma/enums";
 import { CreationSource } from "@calcom/prisma/enums";
-import {
-  eventTypeAppMetadataOptionalSchema,
-  eventTypeMetaDataSchemaWithTypedApps,
-  userMetadata as userMetadataSchema,
-} from "@calcom/prisma/zod-utils";
+import { eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils/event-type-app-metadata-optional-schema";
+import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
+import { userMetadata as userMetadataSchema } from "@calcom/prisma/zod-utils/user-metadata";
 import { getAllWorkflowsFromEventType } from "@calcom/trpc/server/routers/viewer/workflows/util";
 import type {
   AdditionalInformation,

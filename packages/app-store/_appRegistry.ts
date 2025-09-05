@@ -4,7 +4,7 @@ import getInstallCountPerApp from "@calcom/lib/apps/getInstallCountPerApp";
 import { getAllDelegationCredentialsForUser } from "@calcom/lib/delegationCredential/server";
 import type { UserAdminTeams } from "@calcom/lib/server/repository/user";
 import prisma, { safeAppSelect, safeCredentialSelect } from "@calcom/prisma";
-import { userMetadata } from "@calcom/prisma/zod-utils";
+import { userMetadata } from "@calcom/prisma/zod-utils/user-metadata";
 import type { AppFrontendPayload as App } from "@calcom/types/App";
 import type { CredentialFrontendPayload as Credential } from "@calcom/types/Credential";
 

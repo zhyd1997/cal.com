@@ -22,7 +22,7 @@ import { getRoutedTeamMemberIdsFromSearchParams } from "@calcom/lib/bookings/get
 import { getUsernameList } from "@calcom/lib/defaultEvents";
 import type { ConnectedDestinationCalendars } from "@calcom/lib/getConnectedDestinationCalendars";
 import { localStorage } from "@calcom/lib/webstorage";
-import { BookerLayouts } from "@calcom/prisma/zod-utils";
+import { BookerLayouts } from "@calcom/prisma/zod-utils/booker-layouts-enum";
 
 import { useCreateBooking } from "../hooks/bookings/useCreateBooking";
 import { useCreateInstantBooking } from "../hooks/bookings/useCreateInstantBooking";

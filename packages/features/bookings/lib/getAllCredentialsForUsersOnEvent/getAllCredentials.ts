@@ -4,8 +4,8 @@ import { enrichUserWithDelegationCredentialsIncludeServiceAccountKey } from "@ca
 import { UserRepository } from "@calcom/lib/server/repository/user";
 import prisma from "@calcom/prisma";
 import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import { eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils";
-import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import { eventTypeAppMetadataOptionalSchema } from "@calcom/prisma/zod-utils/event-type-app-metadata-optional-schema";
+import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 import type { CredentialPayload } from "@calcom/types/Credential";
 
 export type EventType = {

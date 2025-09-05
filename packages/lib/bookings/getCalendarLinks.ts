@@ -7,7 +7,7 @@ import type { z } from "zod";
 import type { Dayjs } from "@calcom/dayjs";
 import dayjs from "@calcom/dayjs";
 import type { nameObjectSchema } from "@calcom/lib/event";
-import { bookingMetadataSchema } from "@calcom/prisma/zod-utils";
+import { bookingMetadataSchema } from "@calcom/prisma/zod-utils/booking-metadata-schema";
 import type { RecurringEvent } from "@calcom/types/Calendar";
 
 import { getEventName } from "../event";

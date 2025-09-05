@@ -37,7 +37,7 @@ import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { useTelemetry } from "@calcom/lib/hooks/useTelemetry";
 import { collectPageParameters, telemetryEventTypes } from "@calcom/lib/telemetry";
 import { IS_EUROPE } from "@calcom/lib/timezoneConstants";
-import { signupSchema as apiSignupSchema } from "@calcom/prisma/zod-utils";
+import { signupSchema as apiSignupSchema } from "@calcom/prisma/zod-utils/signup-schema";
 import type { inferSSRProps } from "@calcom/types/inferSSRProps";
 import classNames from "@calcom/ui/classNames";
 import { Alert } from "@calcom/ui/components/alert";

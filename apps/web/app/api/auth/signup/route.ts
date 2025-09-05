@@ -11,7 +11,7 @@ import { HttpError } from "@calcom/lib/http-error";
 import logger from "@calcom/lib/logger";
 import { checkCfTurnstileToken } from "@calcom/lib/server/checkCfTurnstileToken";
 import { prisma } from "@calcom/prisma";
-import { signupSchema } from "@calcom/prisma/zod-utils";
+import { signupSchema } from "@calcom/prisma/zod-utils/signup-schema";
 
 async function ensureSignupIsEnabled(body: Record<string, string>) {
   const { token } = signupSchema

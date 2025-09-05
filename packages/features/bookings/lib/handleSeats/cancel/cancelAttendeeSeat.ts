@@ -13,8 +13,8 @@ import { WorkflowRepository } from "@calcom/lib/server/repository/workflow";
 import { updateMeeting } from "@calcom/lib/videoClient";
 import prisma from "@calcom/prisma";
 import { WebhookTriggerEvents } from "@calcom/prisma/enums";
-import { bookingCancelAttendeeSeatSchema } from "@calcom/prisma/zod-utils";
-import type { EventTypeMetadata } from "@calcom/prisma/zod-utils";
+import { bookingCancelAttendeeSeatSchema } from "@calcom/prisma/zod-utils/booking-cancel-attendee-seat-schema";
+import type { EventTypeMetadata } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 import type { CalendarEvent } from "@calcom/types/Calendar";
 
 import type { BookingToDelete } from "../../handleCancelBooking";

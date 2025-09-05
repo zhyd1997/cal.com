@@ -4,7 +4,7 @@ import { renameDomain } from "@calcom/lib/domainManager/organization";
 import { getMetadataHelpers } from "@calcom/lib/getMetadataHelpers";
 import { HttpError } from "@calcom/lib/http-error";
 import { prisma } from "@calcom/prisma";
-import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils/team-metadata-strict-schema";
 
 import type { TrpcSessionUser } from "../../../types";
 import type { TAdminUpdate } from "./adminUpdate.schema";

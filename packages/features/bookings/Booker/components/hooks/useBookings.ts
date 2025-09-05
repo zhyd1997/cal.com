@@ -20,7 +20,7 @@ import { ErrorCode } from "@calcom/lib/errorCodes";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { localStorage } from "@calcom/lib/webstorage";
 import { BookingStatus } from "@calcom/prisma/enums";
-import { bookingMetadataSchema } from "@calcom/prisma/zod-utils";
+import { bookingMetadataSchema } from "@calcom/prisma/zod-utils/booking-metadata-schema";
 import { trpc } from "@calcom/trpc";
 import { showToast } from "@calcom/ui/components/toast";
 

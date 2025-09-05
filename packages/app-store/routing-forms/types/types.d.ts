@@ -3,7 +3,7 @@ import type { ImmutableTree, Config } from "react-awesome-query-builder";
 import type z from "zod";
 
 import type { AttributeType } from "@calcom/prisma/client";
-import type { RoutingFormSettings } from "@calcom/prisma/zod-utils";
+import type { RoutingFormSettings } from "@calcom/prisma/zod-utils/routing-form-settings";
 
 import type QueryBuilderInitialConfig from "../components/react-awesome-query-builder/config/config";
 import type {

@@ -1,6 +1,6 @@
 import { StripeBillingService } from "@calcom/features/ee/billing/stripe-billling-service";
 import { prisma } from "@calcom/prisma";
-import { userMetadata } from "@calcom/prisma/zod-utils";
+import { userMetadata } from "@calcom/prisma/zod-utils/user-metadata";
 import type { TrpcSessionUser } from "@calcom/trpc/server/types";
 
 import { TRPCError } from "@trpc/server";

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { orgSettingsSchema } from "@calcom/prisma/zod-utils";
+import { orgSettingsSchema } from "@calcom/prisma/zod-utils/org-settings-schema";
 
 export const ZAdminUpdate = z.object({
   id: z.number(),

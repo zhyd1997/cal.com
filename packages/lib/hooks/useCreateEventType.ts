@@ -8,7 +8,7 @@ import { useDebounce } from "@calcom/lib/hooks/useDebounce";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { HttpError } from "@calcom/lib/http-error";
 import { SchedulingType } from "@calcom/prisma/enums";
-import { unlockedManagedEventTypeProps } from "@calcom/prisma/zod-utils";
+import { unlockedManagedEventTypeProps } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 import { createEventTypeInput } from "@calcom/prisma/zod/custom/eventtype";
 import { trpc } from "@calcom/trpc/react";
 

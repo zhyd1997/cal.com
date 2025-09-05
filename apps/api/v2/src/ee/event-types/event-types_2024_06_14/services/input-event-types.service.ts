@@ -36,7 +36,7 @@ import {
   OutputUnknownLocation_2024_06_14,
   UpdateEventTypeInput_2024_06_14,
 } from "@calcom/platform-types";
-import { BookerLayouts } from "@calcom/prisma/zod-utils";
+import { BookerLayouts } from "@calcom/prisma/zod-utils/booker-layouts-enum";
 
 interface ValidationContext {
   eventTypeId?: number;

@@ -9,7 +9,8 @@ import slugify from "@calcom/lib/slugify";
 import { prisma } from "@calcom/prisma";
 import type { CreationSource } from "@calcom/prisma/enums";
 import { MembershipRole, RedirectType } from "@calcom/prisma/enums";
-import { teamMetadataSchema, teamMetadataStrictSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
+import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils/team-metadata-strict-schema";
 
 import { TRPCError } from "@trpc/server";
 

@@ -17,16 +17,14 @@ import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
 import { UserRepository } from "@calcom/lib/server/repository/user";
 import type { PrismaClient } from "@calcom/prisma";
 import type { Team } from "@calcom/prisma/client";
-import type { BookerLayoutSettings } from "@calcom/prisma/zod-utils";
-import {
-  BookerLayouts,
-  eventTypeMetaDataSchemaWithTypedApps,
-  bookerLayoutOptions,
-  bookerLayouts as bookerLayoutsSchema,
-  customInputSchema,
-  teamMetadataSchema,
-  userMetadata as userMetadataSchema,
-} from "@calcom/prisma/zod-utils";
+import type { BookerLayoutSettings } from "@calcom/prisma/zod-utils/default-booker-layout-settings";
+import { BookerLayouts } from "@calcom/prisma/zod-utils/booker-layouts-enum";
+import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
+import { bookerLayoutOptions } from "@calcom/prisma/zod-utils/booker-layout-options";
+import { bookerLayouts as bookerLayoutsSchema } from "@calcom/prisma/zod-utils/booker-layouts";
+import { customInputSchema } from "@calcom/prisma/zod-utils/custom-input-schema";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
+import { userMetadata as userMetadataSchema } from "@calcom/prisma/zod-utils/user-metadata";
 import type { UserProfile } from "@calcom/types/UserProfile";
 
 const userSelect = {

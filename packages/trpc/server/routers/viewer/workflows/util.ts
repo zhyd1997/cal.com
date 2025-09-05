@@ -37,7 +37,7 @@ import type { TimeUnit } from "@calcom/prisma/enums";
 import { WorkflowTemplates } from "@calcom/prisma/enums";
 import { SchedulingType } from "@calcom/prisma/enums";
 import { BookingStatus, MembershipRole, WorkflowActions, WorkflowTriggerEvents } from "@calcom/prisma/enums";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 import type { CalEventResponses } from "@calcom/types/Calendar";
 
 import { TRPCError } from "@trpc/server";

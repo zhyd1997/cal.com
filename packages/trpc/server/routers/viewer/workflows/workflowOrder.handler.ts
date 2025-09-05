@@ -2,7 +2,7 @@ import type { TFormSchema } from "@calcom/app-store/routing-forms/trpc/forms.sch
 import { hasFilter } from "@calcom/features/filters/lib/hasFilter";
 import { prisma } from "@calcom/prisma";
 import type { Prisma } from "@calcom/prisma/client";
-import { entries } from "@calcom/prisma/zod-utils";
+import { entries } from "@calcom/prisma/zod-utils/entries";
 import type { TrpcSessionUser } from "@calcom/trpc/server/types";
 
 import { TRPCError } from "@trpc/server";

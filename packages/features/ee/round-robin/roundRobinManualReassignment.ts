@@ -31,7 +31,8 @@ import { BookingLocationService } from "@calcom/lib/server/service/bookingLocati
 import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
 import { prisma } from "@calcom/prisma";
 import { WorkflowActions, WorkflowMethods, WorkflowTriggerEvents } from "@calcom/prisma/enums";
-import type { EventTypeMetadata, PlatformClientParams } from "@calcom/prisma/zod-utils";
+import type { EventTypeMetadata } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
+import type { PlatformClientParams } from "@calcom/prisma/zod-utils/platform-client-params-schema";
 import type { CalendarEvent } from "@calcom/types/Calendar";
 
 import { handleRescheduleEventManager } from "./handleRescheduleEventManager";

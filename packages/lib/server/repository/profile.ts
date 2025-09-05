@@ -8,7 +8,7 @@ import { safeStringify } from "@calcom/lib/safeStringify";
 import prisma from "@calcom/prisma";
 import type { Prisma } from "@calcom/prisma/client";
 import type { Team } from "@calcom/prisma/client";
-import { userMetadata } from "@calcom/prisma/zod-utils";
+import { userMetadata } from "@calcom/prisma/zod-utils/user-metadata";
 import type { UpId, UserAsPersonalProfile, UserProfile } from "@calcom/types/UserProfile";
 
 import logger from "../../logger";

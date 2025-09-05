@@ -6,7 +6,7 @@ import { Redirect } from "@calcom/lib/redirect";
 import { isOrganisationAdmin } from "@calcom/lib/server/queries/organisations";
 import { isTeamAdmin } from "@calcom/lib/server/queries/teams";
 import { TeamService } from "@calcom/lib/server/service/teamService";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 import { TRPCError } from "@trpc/server";
 

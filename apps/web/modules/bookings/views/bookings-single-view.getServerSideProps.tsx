@@ -12,7 +12,8 @@ import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
 import { maybeGetBookingUidFromSeat } from "@calcom/lib/server/maybeGetBookingUidFromSeat";
 import { BookingRepository } from "@calcom/lib/server/repository/booking";
 import prisma from "@calcom/prisma";
-import { customInputSchema, eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils";
+import { customInputSchema } from "@calcom/prisma/zod-utils/custom-input-schema";
+import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
 import { meRouter } from "@calcom/trpc/server/routers/viewer/me/_router";
 
 import type { inferSSRProps } from "@lib/types/inferSSRProps";

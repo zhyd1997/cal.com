@@ -7,7 +7,7 @@ import {
   getDownloadLinkOfCalVideoByRecordingId,
 } from "@calcom/lib/videoClient";
 import prisma from "@calcom/prisma";
-import type { RecordingItemSchema } from "@calcom/prisma/zod-utils";
+import type { RecordingItemSchema } from "@calcom/prisma/zod-utils/recording-item-schema";
 import type { PartialReference } from "@calcom/types/EventManager";
 
 import { schemaQueryIdParseInt } from "~/lib/validations/shared/queryIdTransformParseInt";

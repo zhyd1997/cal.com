@@ -27,7 +27,7 @@ import { deleteMeeting } from "@calcom/lib/videoClient";
 import { prisma } from "@calcom/prisma";
 import type { WebhookTriggerEvents } from "@calcom/prisma/enums";
 import { BookingStatus } from "@calcom/prisma/enums";
-import type { EventTypeMetadata } from "@calcom/prisma/zod-utils";
+import type { EventTypeMetadata } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 import type { Person } from "@calcom/types/Calendar";
 
 import { TRPCError } from "@trpc/server";

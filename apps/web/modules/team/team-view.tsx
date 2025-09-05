@@ -19,7 +19,7 @@ import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
 import { useTelemetry } from "@calcom/lib/hooks/useTelemetry";
 import useTheme from "@calcom/lib/hooks/useTheme";
 import { collectPageParameters, telemetryEventTypes } from "@calcom/lib/telemetry";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 import { UserAvatarGroup } from "@calcom/ui/components/avatar";
 import { Avatar } from "@calcom/ui/components/avatar";
 import { Button } from "@calcom/ui/components/button";

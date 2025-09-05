@@ -18,7 +18,7 @@ import { validateAndGetCorrectedUsernameAndEmail } from "@calcom/lib/validateUse
 import { prisma } from "@calcom/prisma";
 import { CreationSource } from "@calcom/prisma/enums";
 import { IdentityProvider } from "@calcom/prisma/enums";
-import { signupSchema } from "@calcom/prisma/zod-utils";
+import { signupSchema } from "@calcom/prisma/zod-utils/signup-schema";
 import { buildLegacyRequest } from "@calcom/web/lib/buildLegacyCtx";
 
 import { joinAnyChildTeamOnOrgInvite } from "../utils/organization";

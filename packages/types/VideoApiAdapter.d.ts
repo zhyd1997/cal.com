@@ -3,7 +3,8 @@ import type {
   batchProcessorBody,
   TGetTranscriptAccessLink,
 } from "@calcom/app-store/dailyvideo/zod";
-import type { GetRecordingsResponseSchema, GetAccessLinkResponseSchema } from "@calcom/prisma/zod-utils";
+import type { GetRecordingsResponseSchema } from "@calcom/prisma/zod-utils/get-recordings-response-schema";
+import type { GetAccessLinkResponseSchema } from "@calcom/prisma/zod-utils/get-access-link-response-schema";
 
 import type { EventBusyDate } from "./Calendar";
 import type { CredentialPayload } from "./Credential";

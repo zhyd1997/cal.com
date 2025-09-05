@@ -1,4 +1,4 @@
-import { ZVerifyCodeInputSchema } from "@calcom/prisma/zod-utils";
+import { ZVerifyCodeInputSchema } from "@calcom/prisma/zod-utils/z-verify-code-input-schema";
 
 import authedProcedure from "../../../procedures/authedProcedure";
 import publicProcedure from "../../../procedures/publicProcedure";

@@ -10,7 +10,7 @@ import type {
 } from "@calcom/features/eventtypes/lib/types";
 import type { FormValues } from "@calcom/features/eventtypes/lib/types";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Frequency } from "@calcom/prisma/zod-utils";
+import { Frequency } from "@calcom/prisma/zod-utils/frequency";
 import type { RecurringEvent } from "@calcom/types/Calendar";
 import classNames from "@calcom/ui/classNames";
 import { Alert } from "@calcom/ui/components/alert";

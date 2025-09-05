@@ -7,7 +7,7 @@ import { CalendarCacheRepository } from "@calcom/features/calendar-cache/calenda
 import { getTimeMin, getTimeMax } from "@calcom/features/calendar-cache/lib/datesForCache";
 import { prisma } from "@calcom/prisma";
 import { MembershipRole, SchedulingType } from "@calcom/prisma/enums";
-import type { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import type { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 import { test } from "./lib/fixtures";
 import type { Fixtures } from "./lib/fixtures";

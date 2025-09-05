@@ -10,7 +10,7 @@ import { formatCalEvent } from "@calcom/lib/formatCalendarEvent";
 import logger from "@calcom/lib/logger";
 import { safeStringify } from "@calcom/lib/safeStringify";
 import { withReporting } from "@calcom/lib/sentryWrapper";
-import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 import type { CalendarEvent, Person } from "@calcom/types/Calendar";
 
 import AwaitingPaymentSMS from "../sms/attendee/awaiting-payment-sms";

@@ -10,7 +10,7 @@ import { Redirect } from "@calcom/lib/redirect";
 import { safeStringify } from "@calcom/lib/safeStringify";
 import { OrganizationOnboardingRepository } from "@calcom/lib/server/repository/organizationOnboarding";
 import prisma from "@calcom/prisma";
-import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataStrictSchema } from "@calcom/prisma/zod-utils/team-metadata-strict-schema";
 
 import billing from "..";
 import { TeamBillingPublishResponseStatus, type TeamBilling, type TeamBillingInput } from "./team-billing";

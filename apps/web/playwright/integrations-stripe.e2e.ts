@@ -3,7 +3,7 @@ import type Prisma from "@prisma/client";
 
 import prisma from "@calcom/prisma";
 import { SchedulingType } from "@calcom/prisma/enums";
-import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils";
+import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
 
 import { test, todo } from "./lib/fixtures";
 import type { Fixtures } from "./lib/fixtures";

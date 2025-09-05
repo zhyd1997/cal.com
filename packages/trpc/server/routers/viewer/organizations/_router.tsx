@@ -1,5 +1,5 @@
 import { createPhoneCallSchema } from "@calcom/features/calAIPhone/zod-utils";
-import { ZVerifyCodeInputSchema } from "@calcom/prisma/zod-utils";
+import { ZVerifyCodeInputSchema } from "@calcom/prisma/zod-utils/z-verify-code-input-schema";
 
 import authedProcedure, {
   authedAdminProcedure,
