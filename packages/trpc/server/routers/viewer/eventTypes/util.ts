@@ -7,7 +7,7 @@ import { UserRepository } from "@calcom/lib/server/repository/user";
 import prisma from "@calcom/prisma";
 import { PeriodType } from "@calcom/prisma/enums";
 import type { CustomInputSchema } from "@calcom/prisma/zod-utils";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 
 import { TRPCError } from "@trpc/server";
 
@@ -183,20 +183,6 @@ export function ensureEmailOrPhoneNumberIsPresent(fields: TUpdateInputSchema["bo
     });
   }
 }
-
-type Host = {
-  userId: number;
-  isFixed?: boolean | undefined;
-  priority?: number | null | undefined;
-  weight?: number | null | undefined;
-  scheduleId?: number | null | undefined;
-  groupId: string | null;
-};
-
-type User = {
-  id: number;
-  email: string;
-};
 
 export const mapEventType = async (eventType: EventType) => ({
   ...eventType,
