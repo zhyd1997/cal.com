@@ -9,7 +9,7 @@ import { ProfileRepository } from "@calcom/lib/server/repository/profile";
 // import { getEventTypesByViewer } from "@calcom/lib/event-types/getEventTypesByViewer";
 import type { PrismaClient } from "@calcom/prisma";
 import { MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 import { TRPCError } from "@trpc/server";
 
