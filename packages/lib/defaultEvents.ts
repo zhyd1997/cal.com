@@ -1,12 +1,11 @@
 import type { Prisma, SelectedCalendar } from "@prisma/client";
 
-import { DailyLocationType } from "@calcom/app-store/locations";
 import slugify from "@calcom/lib/slugify";
 import { PeriodType, SchedulingType } from "@calcom/prisma/enums";
 import type { userSelect } from "@calcom/prisma/selects";
-import type { CustomInputSchema } from "@calcom/prisma/zod-utils";
-import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import type { CustomInputSchema } from "@calcom/prisma/zod-utils/custom-input-schema";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
+import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/prisma/zod-utils/event-type-metadata-with-typed-apps";
 import type { CredentialPayload } from "@calcom/types/Credential";
 
 type User = Omit<Prisma.UserGetPayload<typeof userSelect>, "selectedCalendars"> & {
@@ -72,7 +71,7 @@ const commons = {
   periodDays: null,
   slotInterval: null,
   offsetStart: 0,
-  locations: [{ type: DailyLocationType }],
+  locations: [{ type: "integrations:daily" }],
   customInputs,
   disableGuests: true,
   minimumBookingNotice: 120,

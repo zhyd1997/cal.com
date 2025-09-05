@@ -1,4 +1,5 @@
-import { bookerLayoutOptions, type BookerLayoutSettings } from "@calcom/prisma/zod-utils";
+import { bookerLayoutOptions } from "@calcom/prisma/zod-utils/booker-layout-options";
+import type { BookerLayoutSettings } from "@calcom/prisma/zod-utils/default-booker-layout-settings";
 
 export const validateBookerLayouts = (settings: BookerLayoutSettings) => {
   // Allow layouts to be null, as per database defaults.

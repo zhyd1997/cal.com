@@ -70,7 +70,9 @@ export { getAllUserBookings };
 export { getBookingInfo };
 export { handleCancelBooking };
 
-export { userMetadata, bookingMetadataSchema, teamMetadataSchema } from "@calcom/prisma/zod-utils";
+export { userMetadata } from "@calcom/prisma/zod-utils/user-metadata";
+export { bookingMetadataSchema } from "@calcom/prisma/zod-utils/booking-metadata-schema";
+export { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 export { parseBookingLimit } from "@calcom/lib/intervalLimits/isBookingLimits";
 

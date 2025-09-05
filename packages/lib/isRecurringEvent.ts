@@ -1,4 +1,4 @@
-import { recurringEventType as recurringEventSchema } from "@calcom/prisma/zod-utils";
+import { recurringEventType as recurringEventSchema } from "@calcom/prisma/zod-utils/recurring-event-type";
 import type { RecurringEvent } from "@calcom/types/Calendar";
 
 export function isRecurringEvent(obj: unknown): obj is RecurringEvent {
