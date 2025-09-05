@@ -10,7 +10,7 @@ import { DEFAULT_SCHEDULE, getAvailabilityFromSchedule } from "@calcom/lib/avail
 import { MembershipRole } from "@calcom/prisma/enums";
 
 import prisma from ".";
-import type { teamMetadataSchema } from "./zod-utils";
+import type { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 export async function createUserAndEventType({
   user,

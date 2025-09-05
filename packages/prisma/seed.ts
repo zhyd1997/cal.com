@@ -18,7 +18,7 @@ import prisma from ".";
 import mainAppStore from "./seed-app-store";
 import mainHugeEventTypesSeed from "./seed-huge-event-types";
 import { createUserAndEventType } from "./seed-utils";
-import type { teamMetadataSchema } from "./zod-utils";
+import type { teamMetadataSchema } from "@calcom/prisma/zod-utils/team-metadata-schema";
 
 type PlatformUser = {
   email: string;
