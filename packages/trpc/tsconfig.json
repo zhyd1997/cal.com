@@ -20,6 +20,7 @@
     "resolveJsonModule": true,
     "declarationDir": "types/server",
     "moduleResolution": "node",
+    "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
       "@calcom/prisma/zod-utils/*": ["../prisma/zod-utils/*"]
