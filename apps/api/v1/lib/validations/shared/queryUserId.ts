@@ -1,7 +1,7 @@
 import { withValidation } from "next-validations";
 import { z } from "zod";
 
-import { stringOrNumber } from "@calcom/prisma/zod-utils";
+import { stringOrNumber } from "@calcom/prisma/zod-utils/string-or-number";
 
 import { baseApiParams } from "./baseApiParams";
 
