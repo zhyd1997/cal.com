@@ -1,6 +1,8 @@
 import { SchedulingType } from "@calcom/prisma/enums";
 import { z } from "zod";
-import * as imports from "../../zod-utils";
+import { eventTypeSlug } from "@calcom/prisma/zod-utils/event-type-slug";
+import { eventTypeLocations } from "@calcom/prisma/zod-utils/event-type-locations";
+import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils/event-type-metadata-schema";
 import { MIN_EVENT_DURATION_MINUTES, MAX_EVENT_DURATION_MINUTES } from "@calcom/lib/constants";
 // TODO: figure out why EventTypeModel is being called even if it's not imported here, causing a circular dependency
 // import { _EventTypeModel } from "../eventtype";
@@ -20,14 +22,14 @@ const calVideoSettingsSchema = z
 
 export const createEventTypeInput = z.object({
   title: z.string().trim().min(1),
-  slug: imports.eventTypeSlug,
+  slug: eventTypeSlug,
   description: z.string().nullish(),
   length: z.number().int().min(MIN_EVENT_DURATION_MINUTES).max(MAX_EVENT_DURATION_MINUTES),
   hidden: z.boolean(),
   teamId: z.number().int().nullish(),
   schedulingType: z.nativeEnum(SchedulingType).nullish(),
-  locations: imports.eventTypeLocations,
-  metadata: imports.EventTypeMetaDataSchema.optional(),
+  locations: eventTypeLocations,
+  metadata: EventTypeMetaDataSchema.optional(),
   disableGuests: z.boolean().optional(),
   slotInterval: z.number().min(0).nullish(),
   minimumBookingNotice: z.number().int().min(0).optional(),
@@ -51,4 +53,4 @@ export const createEventTypeInput = z.object({
     teamId: z.number().nullish(),
   }).strict();
 
-export type EventTypeLocation = (z.infer<typeof imports.eventTypeLocations>)[number];
+export type EventTypeLocation = (z.infer<typeof eventTypeLocations>)[number];
