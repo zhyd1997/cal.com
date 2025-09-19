@@ -163,34 +163,6 @@
     "./server/routers/viewer/eventTypes/_router": {
       "import": "./dist/server/routers/viewer/eventTypes/_router.mjs",
       "require": "./dist/server/routers/viewer/eventTypes/_router.js"
-    },
-    "./server/routers/viewer/workflows/util": {
-      "import": "./dist/server/routers/viewer/workflows/util.mjs",
-      "require": "./dist/server/routers/viewer/workflows/util.js"
-    },
-    "./server/routers/viewer/slots/types": {
-      "import": "./dist/server/routers/viewer/slots/types.mjs",
-      "require": "./dist/server/routers/viewer/slots/types.js"
-    },
-    "./server/routers/viewer/slots/util": {
-      "import": "./dist/server/routers/viewer/slots/util.mjs",
-      "require": "./dist/server/routers/viewer/slots/util.js"
-    },
-    "./server/routers/viewer/slots/handleNotificationWhenNoSlots": {
-      "import": "./dist/server/routers/viewer/slots/handleNotificationWhenNoSlots.mjs",
-      "require": "./dist/server/routers/viewer/slots/handleNotificationWhenNoSlots.js"
-    },
-    "./server/routers/viewer/availability/util": {
-      "import": "./dist/server/routers/viewer/availability/util.mjs",
-      "require": "./dist/server/routers/viewer/availability/util.js"
-    },
-    "./server/routers/viewer/organizations/createTeams.handler": {
-      "import": "./dist/server/routers/viewer/organizations/createTeams.handler.mjs",
-      "require": "./dist/server/routers/viewer/organizations/createTeams.handler.js"
-    },
-    "./server/routers/viewer/teams/inviteMember/inviteMember.handler": {
-      "import": "./dist/server/routers/viewer/teams/inviteMember/inviteMember.handler.mjs",
-      "require": "./dist/server/routers/viewer/teams/inviteMember/inviteMember.handler.js"
     }
   },
   "files": [
