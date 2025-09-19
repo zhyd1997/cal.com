@@ -309,7 +309,7 @@
       "dependsOn": ["@calcom/prisma#db-up"]
     },
     "@calcom/trpc#build": {
-      "outputs": ["./types"]
+      "outputs": ["./dist/**"]
     },
     "@calcom/web#build": {
       "dependsOn": ["^build"],

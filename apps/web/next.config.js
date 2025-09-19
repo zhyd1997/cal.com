@@ -222,7 +222,6 @@ const nextConfig = (phase) => {
       "@calcom/features",
       "@calcom/lib",
       "@calcom/prisma",
-      "@calcom/trpc",
     ],
     modularizeImports: {
       "@calcom/features/insights/components": {

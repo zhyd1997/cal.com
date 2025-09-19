@@ -5,11 +5,30 @@
   "description": "Shared tRPC library for Cal.com",
   "authors": "zomars",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./react": {
+      "import": "./dist/react/index.mjs",
+      "require": "./dist/react/index.js"
+    },
+    "./server": {
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "build": "yarn trpc:generate || true",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "trpc:generate": "yarn tsc --project tsconfig.json"
   },
   "dependencies": {
@@ -22,6 +41,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "tsup": "^8.5.0",
     "typescript": "^5.9.0-beta"
   }
 }
