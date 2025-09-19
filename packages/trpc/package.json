@@ -16,9 +16,45 @@
       "import": "./dist/react/index.mjs",
       "require": "./dist/react/index.js"
     },
+    "./react/shared": {
+      "import": "./dist/react/shared.mjs",
+      "require": "./dist/react/shared.js"
+    },
+    "./react/trpc": {
+      "import": "./dist/react/trpc.mjs",
+      "require": "./dist/react/trpc.js"
+    },
+    "./react/hooks/useMeQuery": {
+      "import": "./dist/react/hooks/useMeQuery.mjs",
+      "require": "./dist/react/hooks/useMeQuery.js"
+    },
+    "./react/hooks/useEmailVerifyCheck": {
+      "import": "./dist/react/hooks/useEmailVerifyCheck.mjs",
+      "require": "./dist/react/hooks/useEmailVerifyCheck.js"
+    },
     "./server": {
       "import": "./dist/server/index.mjs",
       "require": "./dist/server/index.js"
+    },
+    "./server/createNextApiHandler": {
+      "import": "./dist/server/createNextApiHandler.mjs",
+      "require": "./dist/server/createNextApiHandler.js"
+    },
+    "./server/createContext": {
+      "import": "./dist/server/createContext.mjs",
+      "require": "./dist/server/createContext.js"
+    },
+    "./server/errorFormatter": {
+      "import": "./dist/server/errorFormatter.mjs",
+      "require": "./dist/server/errorFormatter.js"
+    },
+    "./server/onErrorHandler": {
+      "import": "./dist/server/onErrorHandler.mjs",
+      "require": "./dist/server/onErrorHandler.js"
+    },
+    "./server/types": {
+      "import": "./dist/server/types.mjs",
+      "require": "./dist/server/types.js"
     }
   },
   "files": [
