@@ -52,6 +52,10 @@ export default defineConfig([
         "server/routers/publicViewer/stripeCheckoutSession.schema.ts",
       "server/routers/publicViewer/submitRating.schema": "server/routers/publicViewer/submitRating.schema.ts",
       "server/routers/publicViewer/procedures/event": "server/routers/publicViewer/procedures/event.ts",
+      "server/routers/publicViewer/event.handler": "server/routers/publicViewer/event.handler.ts",
+      "server/routers/publicViewer/event.schema": "server/routers/publicViewer/event.schema.ts",
+      "server/routers/publicViewer/checkIfUserEmailVerificationRequired.handler":
+        "server/routers/publicViewer/checkIfUserEmailVerificationRequired.handler.ts",
       "server/routers/viewer/_router": "server/routers/viewer/_router.tsx",
       "server/routers/loggedInViewer/_router": "server/routers/loggedInViewer/_router.tsx",
       "server/routers/apps/routing-forms/_router": "server/routers/apps/routing-forms/_router.ts",
