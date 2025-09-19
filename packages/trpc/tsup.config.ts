@@ -56,6 +56,17 @@ export default defineConfig([
       "server/routers/publicViewer/event.schema": "server/routers/publicViewer/event.schema.ts",
       "server/routers/publicViewer/checkIfUserEmailVerificationRequired.handler":
         "server/routers/publicViewer/checkIfUserEmailVerificationRequired.handler.ts",
+      "server/routers/publicViewer/countryCode.handler": "server/routers/publicViewer/countryCode.handler.ts",
+      "server/routers/publicViewer/markHostAsNoShow.handler":
+        "server/routers/publicViewer/markHostAsNoShow.handler.ts",
+      "server/routers/publicViewer/samlTenantProduct.handler":
+        "server/routers/publicViewer/samlTenantProduct.handler.ts",
+      "server/routers/publicViewer/stripeCheckoutSession.handler":
+        "server/routers/publicViewer/stripeCheckoutSession.handler.ts",
+      "server/routers/publicViewer/submitRating.handler":
+        "server/routers/publicViewer/submitRating.handler.ts",
+      "server/routers/publicViewer/ssoConnections.handler":
+        "server/routers/publicViewer/ssoConnections.handler.ts",
       "server/routers/viewer/_router": "server/routers/viewer/_router.tsx",
       "server/routers/loggedInViewer/_router": "server/routers/loggedInViewer/_router.tsx",
       "server/routers/apps/routing-forms/_router": "server/routers/apps/routing-forms/_router.ts",
