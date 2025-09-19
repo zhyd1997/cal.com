@@ -27,6 +27,7 @@ export default defineConfig([
       "zod",
     ],
     outDir: "dist",
+    splitting: false,
   },
   {
     entry: {
@@ -99,5 +100,6 @@ export default defineConfig([
     outDir: "dist",
     target: "node18",
     bundle: false,
+    splitting: false,
   },
 ]);
