@@ -227,6 +227,7 @@ export const useBookings = ({
             getDryRunRescheduleBookingSuccessfulEventPayload({
               ...booking,
               isRecurring: false,
+              paymentRequired: false,
             })
           );
         } else {
@@ -235,6 +236,7 @@ export const useBookings = ({
             getDryRunBookingSuccessfulEventPayload({
               ...booking,
               isRecurring: false,
+              paymentRequired: false,
             })
           );
         }
@@ -273,6 +275,7 @@ export const useBookings = ({
           getRescheduleBookingSuccessfulEventPayload({
             ...booking,
             isRecurring: false,
+            paymentRequired: false,
           })
         );
       } else {
@@ -294,6 +297,7 @@ export const useBookings = ({
           getBookingSuccessfulEventPayload({
             ...booking,
             isRecurring: false,
+            paymentRequired: false,
           })
         );
       }
@@ -391,6 +395,7 @@ export const useBookings = ({
             ...getDryRunRescheduleBookingSuccessfulEventPayload({
               ...booking,
               isRecurring: true,
+              paymentRequired: false,
             }),
             allBookings: bookings.map((booking) => ({
               startTime: booking.startTime,
@@ -402,6 +407,7 @@ export const useBookings = ({
             ...getDryRunBookingSuccessfulEventPayload({
               ...booking,
               isRecurring: true,
+              paymentRequired: false,
             }),
             allBookings: bookings.map((booking) => ({
               startTime: booking.startTime,
@@ -436,6 +442,7 @@ export const useBookings = ({
           ...getRescheduleBookingSuccessfulEventPayload({
             ...booking,
             isRecurring: true,
+            paymentRequired: false,
           }),
           allBookings: bookings.map((booking) => ({
             startTime: booking.startTime,
@@ -447,6 +454,7 @@ export const useBookings = ({
           ...getBookingSuccessfulEventPayload({
             ...booking,
             isRecurring: true,
+            paymentRequired: false,
           }),
           allBookings: bookings.map((booking) => ({
             startTime: booking.startTime,
