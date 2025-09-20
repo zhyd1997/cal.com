@@ -12,7 +12,7 @@ export function getTokenObjectFromCredential(credential: Pick<CredentialPayload,
       safeStringify(parsedTokenResponse.error.issues)
     );
     throw new Error(
-      `Could not parse credential.key ${credential.id} with error: ${parsedTokenResponse?.error}`
+      `Could not parse credential.key ${credential.id} with error: ${parsedTokenResponse.error}`
     );
   }
 

@@ -70,7 +70,7 @@ export default class CloseComCRMService implements CRM {
 
     if (!parsedKey.success) {
       throw new Error(
-        `Invalid credentials for userId ${credential.userId} and appId ${credential.appId}: ${parsedKey.error}`
+        `Invalid credentials for userId ${credential.userId} and appId ${credential.appId}: ${parsedKey.error.message}`
       );
     }
 
