@@ -16,9 +16,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
   const { teamId, returnTo } = req.query;
 
-  await throwIfNotHaveAdminAccessToTeam({ teamId: Number(teamId) ?? null, userId: req.session.user.id });
+  await throwIfNotHaveAdminAccessToTeam({ teamId: Number(teamId) ?? null, userId: req.session!.user.id });
 
-  const installForObject = teamId ? { teamId: Number(teamId) } : { userId: req.session.user.id };
+  const installForObject = teamId ? { teamId: Number(teamId) } : { userId: req.session!.user.id };
   const appType = "jitsi_video";
   try {
     const alreadyInstalled = await prisma.credential.findFirst({

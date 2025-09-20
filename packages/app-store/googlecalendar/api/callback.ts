@@ -42,6 +42,8 @@ async function getHandler(req: NextApiRequest, res: NextApiResponse) {
     throw new HttpError({ statusCode: 401, message: "You must be logged in to do this" });
   }
 
+  const userId = req.session.user.id;
+
   const { client_id, client_secret } = await getGoogleAppKeys();
 
   const redirect_uri = `${WEBAPP_URL_FOR_OAUTH}/api/integrations/googlecalendar/callback`;
@@ -72,7 +74,7 @@ async function getHandler(req: NextApiRequest, res: NextApiResponse) {
     oAuth2Client.setCredentials(key);
 
     const gcalCredential = await CredentialRepository.create({
-      userId: req.session.user.id,
+      userId: userId,
       key,
       appId: "google-calendar",
       type: "google_calendar",
@@ -102,11 +104,11 @@ async function getHandler(req: NextApiRequest, res: NextApiResponse) {
 
     // Only attempt to update the user's profile photo if the user has granted the required scope
     if (grantedScopes.includes(SCOPE_USERINFO_PROFILE)) {
-      await updateProfilePhotoGoogle(oAuth2Client, req.session.user.id);
+      await updateProfilePhotoGoogle(oAuth2Client, userId);
     }
 
     const selectedCalendarWhereUnique = {
-      userId: req.session.user.id,
+      userId: userId,
       externalId: primaryCal.id,
       integration: "google_calendar",
     };
@@ -155,7 +157,7 @@ async function getHandler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   const existingGoogleMeetCredential = await CredentialRepository.findFirstByUserIdAndType({
-    userId: req.session.user.id,
+    userId: userId,
     type: "google_video",
   });
 
@@ -170,7 +172,7 @@ async function getHandler(req: NextApiRequest, res: NextApiResponse) {
 
   // Create a new google meet credential
   await CredentialRepository.create({
-    userId: req.session.user.id,
+    userId: userId,
     type: "google_video",
     key: {},
     appId: "google-meet",

@@ -12,8 +12,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const { teamId } = req.query;
 
-  await throwIfNotHaveAdminAccessToTeam({ teamId: Number(teamId) ?? null, userId: req.session.user.id });
-  const installForObject = teamId ? { teamId: Number(teamId) } : { userId: req.session.user.id };
+  await throwIfNotHaveAdminAccessToTeam({ teamId: Number(teamId) ?? null, userId: req.session.user!.id });
+  const installForObject = teamId ? { teamId: Number(teamId) } : { userId: req.session.user!.id };
 
   const appType = config.type;
   try {
@@ -30,7 +30,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       data: {
         type: appType,
         key: {},
-        userId: req.session.user.id,
+        userId: req.session.user!.id,
         appId: "paypal",
       },
     });

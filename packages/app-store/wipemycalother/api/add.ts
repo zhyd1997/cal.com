@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const alreadyInstalled = await prisma.credential.findFirst({
       where: {
         type: appType,
-        userId: req.session.user.id,
+        userId: req.session!.user.id,
       },
     });
     if (alreadyInstalled) {
@@ -28,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       data: {
         type: appType,
         key: {},
-        userId: req.session.user.id,
+        userId: req.session!.user.id,
         appId: "wipe-my-cal",
       },
     });

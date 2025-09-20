@@ -107,7 +107,7 @@ async function getHandler(req: NextApiRequest, res: NextApiResponse) {
       data: {
         type: config.type,
         key,
-        userId: req.session.user.id,
+        userId: req.session?.user?.id,
         appId: config.slug,
       },
     });

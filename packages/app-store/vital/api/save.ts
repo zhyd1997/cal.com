@@ -15,7 +15,7 @@ const handler = async (
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<VitalSettingsResponse | NextApiResponse | void> => {
-  if (req.method === "PUT" && req.session && req.session.user.id) {
+  if (req.method === "PUT" && req.session?.user?.id) {
     const userId = req.session.user.id;
     const body = req.body;
     try {

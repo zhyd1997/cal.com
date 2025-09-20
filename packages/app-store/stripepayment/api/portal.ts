@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (!req.session?.user?.id) return res.status(401).json({ message: "Not authenticated" });
 
-  const userId = req.session.user.id;
+  const userId = req.session!.user!.id;
   const teamId = req.query.teamId ? parseInt(req.query.teamId as string) : null;
   let return_url = `${WEBAPP_URL}/settings/billing`;
   if (!teamId) {

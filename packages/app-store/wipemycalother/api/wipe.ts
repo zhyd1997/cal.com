@@ -36,7 +36,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         status: {
           in: [BookingStatus.ACCEPTED, BookingStatus.PENDING],
         },
-        userId: req.session.user.id,
+        userId: req.session?.user?.id,
       },
       select: {
         id: true,

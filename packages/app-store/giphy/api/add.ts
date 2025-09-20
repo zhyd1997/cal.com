@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const userId = req.session.user.id;
   const appType = "giphy_other";
   const teamId = Number(req.query.teamId);
-  const credentialOwner = req.query.teamId ? { teamId } : { userId: req.session.user.id };
+  const credentialOwner = req.query.teamId ? { teamId } : { userId };
 
   await throwIfNotHaveAdminAccessToTeam({ teamId: teamId ?? null, userId });
 

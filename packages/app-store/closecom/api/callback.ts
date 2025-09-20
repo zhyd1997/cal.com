@@ -72,7 +72,7 @@ async function getHandler(req: NextApiRequest, res: NextApiResponse) {
           refresh_token,
           expires_at,
         },
-        userId: req.session.user.id,
+        userId: req.session?.user?.id!,
         appId: "closecom",
       },
     });
