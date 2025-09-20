@@ -5,7 +5,14 @@
   "description": "Cal.com's main collocation of features",
   "authors": "Cal.com, Inc.",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "dependencies": {
     "@calcom/atoms": "*",
     "@calcom/dayjs": "*",
@@ -30,5 +37,8 @@
   "devDependencies": {
     "@testing-library/react-hooks": "^8.0.1",
     "@types/web-push": "^3.6.3"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json"
   }
 }

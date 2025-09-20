@@ -4,7 +4,112 @@
   "sideEffects": false,
   "version": "0.0.0",
   "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./constants": {
+      "types": "./dist/constants.d.ts",
+      "default": "./dist/constants.js"
+    },
+    "./logger": {
+      "types": "./dist/logger.d.ts",
+      "default": "./dist/logger.js"
+    },
+    "./http-error": {
+      "types": "./dist/http-error.d.ts",
+      "default": "./dist/http-error.js"
+    },
+    "./server/repository/credential": {
+      "types": "./dist/server/repository/credential.d.ts",
+      "default": "./dist/server/repository/credential.js"
+    },
+    "./webstorage": {
+      "types": "./dist/webstorage.d.ts",
+      "default": "./dist/webstorage.js"
+    },
+    "./date-ranges": {
+      "types": "./dist/date-ranges.d.ts",
+      "default": "./dist/date-ranges.js"
+    },
+    "./errors": {
+      "types": "./dist/errors.d.ts",
+      "default": "./dist/errors.js"
+    },
+    "./sentryWrapper": {
+      "types": "./dist/sentryWrapper.d.ts",
+      "default": "./dist/sentryWrapper.js"
+    },
+    "./server/repository/booking": {
+      "types": "./dist/server/repository/booking.d.ts",
+      "default": "./dist/server/repository/booking.js"
+    },
+    "./server/repository/deployment": {
+      "types": "./dist/server/repository/deployment.d.ts",
+      "default": "./dist/server/repository/deployment.js"
+    },
+    "./server/repository/deployment.interface": {
+      "types": "./dist/server/repository/deployment.interface.d.ts",
+      "default": "./dist/server/repository/deployment.interface.js"
+    },
+    "./random": {
+      "types": "./dist/random.d.ts",
+      "default": "./dist/random.js"
+    },
+    "./generateHashedLink": {
+      "types": "./dist/generateHashedLink.d.ts",
+      "default": "./dist/generateHashedLink.js"
+    },
+    "./env": {
+      "types": "./dist/env.d.ts",
+      "default": "./dist/env.js"
+    },
+    "./fetchUsername": {
+      "types": "./dist/fetchUsername.d.ts",
+      "default": "./dist/fetchUsername.js"
+    },
+    "./gtm": {
+      "types": "./dist/gtm.d.ts",
+      "default": "./dist/gtm.js"
+    },
+    "./hooks/useCompatSearchParams": {
+      "types": "./dist/hooks/useCompatSearchParams.d.ts",
+      "default": "./dist/hooks/useCompatSearchParams.js"
+    },
+    "./hooks/useDebounce": {
+      "types": "./dist/hooks/useDebounce.d.ts",
+      "default": "./dist/hooks/useDebounce.js"
+    },
+    "./hooks/useLocale": {
+      "types": "./dist/hooks/useLocale.d.ts",
+      "default": "./dist/hooks/useLocale.js"
+    },
+    "./hooks/useTelemetry": {
+      "types": "./dist/hooks/useTelemetry.d.ts",
+      "default": "./dist/hooks/useTelemetry.js"
+    },
+    "./telemetry": {
+      "types": "./dist/telemetry.d.ts",
+      "default": "./dist/telemetry.js"
+    },
+    "./timezoneConstants": {
+      "types": "./dist/timezoneConstants.d.ts",
+      "default": "./dist/timezoneConstants.js"
+    },
+    "./components/ServerTrans": {
+      "types": "./dist/components/ServerTrans.d.ts",
+      "default": "./dist/components/ServerTrans.js"
+    },
+    "./jsonUtils": {
+      "types": "./dist/jsonUtils.d.ts",
+      "default": "./dist/jsonUtils.js"
+    }
+  },
   "scripts": {
+    "build": "tsc --project tsconfig.json",
     "lint": "eslint . --ext .ts,.js,.tsx,.jsx",
     "lint:fix": "eslint . --ext .ts,.js,.tsx,.jsx --fix",
     "lint:report": "eslint . --format json --output-file ../../lint-results/app-store.json"

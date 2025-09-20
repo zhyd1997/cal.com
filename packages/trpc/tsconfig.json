@@ -1,27 +1,32 @@
 {
-  "extends": "@calcom/tsconfig/react-library.json",
-  "include": [
-    "../types/@wojtekmaj__react-daterange-picker.d.ts",
-    "../types/business-days-plugin.d.ts",
-    "../types/next-auth.d.ts",
-    "../types/tanstack-table.d.ts",
-    "../types/next.d.ts",
-    "../types/window.d.ts",
-    "./server"
-  ],
-  "exclude": ["**/node_modules/**", "./react", "./server/**/*.test.ts", "./server/**/*.spec.ts"],
   "compilerOptions": {
-    "isolatedModules": false,
+    "outDir": "./dist",
     "noEmit": false,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "experimentalDecorators": true,
-    "declarationMap": false,
-    "resolveJsonModule": true,
-    "declarationDir": "types/server",
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+    "target": "ES2021",
+    "lib": ["ES2021", "DOM"],
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "composite": false,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": false,
+    "inlineSources": false,
+    "isolatedModules": false,
     "moduleResolution": "node",
-    "paths": {
-      "~/*": ["./*"]
-    }
-  }
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "resolveJsonModule": true,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": false
+  },
+  "include": ["server", "react", "components", "index.ts", "../types/next-auth.d.ts", "../types/next.d.ts"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx", "**/node_modules/**"]
 }

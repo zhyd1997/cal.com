@@ -219,10 +219,7 @@ const nextConfig = (phase) => {
       "@calcom/embed-core",
       "@calcom/embed-react",
       "@calcom/embed-snippet",
-      "@calcom/features",
-      "@calcom/lib",
       "@calcom/prisma",
-      "@calcom/trpc",
     ],
     modularizeImports: {
       "@calcom/features/insights/components": {

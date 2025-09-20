@@ -1,13 +1,30 @@
 {
-  "extends": "@calcom/tsconfig/react-library.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["/*"]
-    },
-    "resolveJsonModule": true,
-    "esModuleInterop": true
+    "outDir": "./dist",
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+    "target": "ES2021",
+    "lib": ["ES2021", "DOM"],
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "composite": false,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "resolveJsonModule": true
   },
-  "include": [".", "../types/next-auth.d.ts", "../types/tanstack-table.d.ts"],
-  "exclude": ["dist", "build", "**/node_modules/**", "**/*.test.*", "**/__mocks__/*", "**/__tests__/*"]
+  "include": ["**/*.ts", "**/*.tsx", "index.ts", "../types/next-auth.d.ts", "../types/next.d.ts"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx", "**/node_modules/**"]
 }
