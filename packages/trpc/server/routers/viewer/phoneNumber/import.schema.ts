@@ -1,5 +1,5 @@
 import { isValidPhoneNumber } from "libphonenumber-js";
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZImportInputSchema = z.object({
   phoneNumber: z.string().refine((val) => isValidPhoneNumber(val), {

@@ -1,6 +1,6 @@
 import type { PageProps } from "app/_types";
 import { redirect } from "next/navigation";
-import { z } from "zod";
+import * as z from "zod";
 
 import { AppCategories } from "@calcom/prisma/enums";
 

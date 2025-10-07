@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm, useFormContext } from "react-hook-form";
 import { Toaster } from "sonner";
-import { z } from "zod";
+import * as z from "zod";
 
 import getStripe from "@calcom/app-store/stripepayment/lib/client";
 import { getPremiumPlanPriceValue } from "@calcom/app-store/stripepayment/lib/utils";
@@ -274,7 +274,7 @@ export default function Signup({
         };
 
         const constructCallBackIfUrlNotPresent = () => {
-          if (!!isPlatformUser) {
+          if (isPlatformUser) {
             return `${WEBAPP_URL}/${gettingStartedWithPlatform}?from=signup`;
           }
 
@@ -284,7 +284,7 @@ export default function Signup({
         const constructCallBackUrl = () => {
           const callbackUrlSearchParams = searchParams?.get("callbackUrl");
 
-          return !!callbackUrlSearchParams
+          return callbackUrlSearchParams
             ? constructCallBackIfUrlPresent()
             : constructCallBackIfUrlNotPresent();
         };

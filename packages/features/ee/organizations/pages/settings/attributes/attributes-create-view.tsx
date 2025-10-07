@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useFormContext } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod";
 
 import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
 import { useLocale } from "@calcom/lib/hooks/useLocale";

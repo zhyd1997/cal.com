@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { FeaturesRepository } from "@calcom/features/flags/features.repository";
 import { isValidPermissionString } from "@calcom/features/pbac/domain/types/permission-registry";

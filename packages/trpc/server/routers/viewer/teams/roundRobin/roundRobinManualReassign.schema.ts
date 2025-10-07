@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZRoundRobinManualReassignInputSchema = z.object({
   bookingId: z.number(),

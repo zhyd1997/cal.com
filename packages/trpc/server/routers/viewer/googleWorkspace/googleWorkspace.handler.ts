@@ -1,6 +1,6 @@
 import { admin_directory_v1 } from "@googleapis/admin";
 import { OAuth2Client } from "googleapis-common";
-import { z } from "zod";
+import * as z from "zod";
 
 import getAppKeysFromSlug from "@calcom/app-store/_utils/getAppKeysFromSlug";
 import { prisma } from "@calcom/prisma";

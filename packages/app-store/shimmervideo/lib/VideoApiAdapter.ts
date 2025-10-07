@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { handleErrorsJson } from "@calcom/lib/errors";
 import type { GetRecordingsResponseSchema, GetAccessLinkResponseSchema } from "@calcom/prisma/zod-utils";

@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZAddSecondaryEmailInputSchema = z.object({
   email: z.string(),

@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import type { WorkflowType } from "@calcom/ee/workflows/components/WorkflowListPage";
 import { deleteScheduledAIPhoneCall } from "@calcom/ee/workflows/lib/reminders/aiPhoneCallManager";
@@ -261,7 +261,7 @@ export class WorkflowRepository {
     };
 
     if (filtered) {
-      if (!!filters.teamIds) {
+      if (filters.teamIds) {
         where.OR.push({
           team: {
             id: {
@@ -277,7 +277,7 @@ export class WorkflowRepository {
         });
       }
 
-      if (!!filters.userIds) {
+      if (filters.userIds) {
         where.OR.push({
           userId: {
             in: filters.userIds,

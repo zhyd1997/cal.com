@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 /** @link https://docs.daily.co/reference/rest-api/rooms/create-room */
 export const dailyReturnTypeSchema = z.object({

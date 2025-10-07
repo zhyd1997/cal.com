@@ -2,7 +2,7 @@ import type { Params } from "app/_types";
 import { defaultResponderForAppDir } from "app/api/defaultResponderForAppDir";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { z } from "zod";
+import * as z from "zod";
 
 import { AVATAR_FALLBACK, WEBAPP_URL } from "@calcom/lib/constants";
 import { convertSvgToPng } from "@calcom/lib/server/imageUtils";

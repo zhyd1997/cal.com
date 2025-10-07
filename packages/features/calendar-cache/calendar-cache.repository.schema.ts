@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const watchCalendarSchema = z.object({
   kind: z.literal("api#channel"),

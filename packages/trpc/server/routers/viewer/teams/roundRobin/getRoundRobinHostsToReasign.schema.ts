@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 // New schema for fetching hosts
 export const ZGetRoundRobinHostsInputSchema = z.object({

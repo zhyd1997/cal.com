@@ -20,7 +20,7 @@ import {
   UnprocessableEntityException,
 } from "@nestjs/common";
 import { DateTime } from "luxon";
-import { z } from "zod";
+import * as z from "zod";
 
 import { SlotFormat } from "@calcom/platform-enums";
 import type {

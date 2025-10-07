@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZRemoveMemberInputSchema = z.object({
   teamIds: z.array(z.number()),

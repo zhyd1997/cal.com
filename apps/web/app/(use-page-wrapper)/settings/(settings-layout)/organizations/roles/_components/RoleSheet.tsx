@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useState, useMemo, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod";
 
 import type { Resource } from "@calcom/features/pbac/domain/types/permission-registry";
 import {
@@ -65,7 +65,7 @@ export function RoleSheet({
   onOpenChange,
   teamId,
   scope = Scope.Organization,
-  isPrivate = false
+  isPrivate = false,
 }: RoleSheetProps) {
   const { t } = useLocale();
   const router = useRouter();

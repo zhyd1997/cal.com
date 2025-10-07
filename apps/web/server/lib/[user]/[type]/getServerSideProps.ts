@@ -1,13 +1,13 @@
 import { type GetServerSidePropsContext } from "next";
 import type { Session } from "next-auth";
-import { z } from "zod";
+import * as z from "zod";
 
 import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
 import type { GetBookingType } from "@calcom/features/bookings/lib/get-booking";
 import { getBookingForReschedule, getBookingForSeatedEvent } from "@calcom/features/bookings/lib/get-booking";
 import { orgDomainConfig } from "@calcom/features/ee/organizations/lib/orgDomains";
-import type { getPublicEvent } from "@calcom/features/eventtypes/lib/getPublicEvent";
 import { getUsernameList } from "@calcom/features/eventtypes/lib/defaultEvents";
+import type { getPublicEvent } from "@calcom/features/eventtypes/lib/getPublicEvent";
 import { shouldHideBrandingForUserEvent } from "@calcom/lib/hideBranding";
 import { EventRepository } from "@calcom/lib/server/repository/event";
 import { UserRepository } from "@calcom/lib/server/repository/user";

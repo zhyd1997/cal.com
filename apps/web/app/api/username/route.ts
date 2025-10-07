@@ -2,7 +2,7 @@ import { defaultResponderForAppDir } from "app/api/defaultResponderForAppDir";
 import { cookies, headers } from "next/headers";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { z } from "zod";
+import * as z from "zod";
 
 import { orgDomainConfig } from "@calcom/features/ee/organizations/lib/orgDomains";
 import { checkUsername } from "@calcom/lib/server/checkUsername";

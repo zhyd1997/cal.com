@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const googleCredentialSchema = z.object({
   scope: z.string(),

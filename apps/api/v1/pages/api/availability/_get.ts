@@ -1,5 +1,5 @@
 import type { NextApiRequest } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import { getUserAvailabilityService } from "@calcom/features/di/containers/GetUserAvailability";
 import { HttpError } from "@calcom/lib/http-error";

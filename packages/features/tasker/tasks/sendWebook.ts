@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import sendPayload from "@calcom/features/webhooks/lib/sendPayload";
 

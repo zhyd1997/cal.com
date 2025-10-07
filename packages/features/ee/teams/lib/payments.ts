@@ -1,5 +1,5 @@
 import type Stripe from "stripe";
-import { z } from "zod";
+import * as z from "zod";
 
 import { getStripeCustomerIdFromUserId } from "@calcom/app-store/stripepayment/lib/customer";
 import { getDubCustomer } from "@calcom/features/auth/lib/dub";

@@ -1,7 +1,7 @@
 import crypto from "crypto";
 import type { NextApiRequest, NextApiResponse } from "next";
 import getRawBody from "raw-body";
-import { z } from "zod";
+import * as z from "zod";
 
 import { handlePaymentSuccess } from "@calcom/app-store/_utils/payments/handlePaymentSuccess";
 import { IS_PRODUCTION } from "@calcom/lib/constants";

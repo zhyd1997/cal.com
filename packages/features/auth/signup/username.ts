@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import notEmpty from "@calcom/lib/notEmpty";
 import { isPremiumUserName, generateUsernameSuggestion } from "@calcom/lib/server/username";

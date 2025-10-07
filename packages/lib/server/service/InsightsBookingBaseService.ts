@@ -1,5 +1,5 @@
 import md5 from "md5";
-import { z } from "zod";
+import * as z from "zod";
 
 import dayjs from "@calcom/dayjs";
 import { makeSqlCondition } from "@calcom/features/data-table/lib/server";

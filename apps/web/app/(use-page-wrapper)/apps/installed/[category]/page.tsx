@@ -3,7 +3,7 @@ import type { PageProps } from "app/_types";
 import { _generateMetadata } from "app/_utils";
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { z } from "zod";
+import * as z from "zod";
 
 import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
 import { AppCategories } from "@calcom/prisma/enums";

@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZRequestRescheduleInputSchema = z.object({
   bookingId: z.string(),

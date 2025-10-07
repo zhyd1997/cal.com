@@ -1,5 +1,5 @@
 import { isValidPhoneNumber } from "libphonenumber-js";
-import { z } from "zod";
+import * as z from "zod";
 
 import { TimeUnit, WorkflowActions, WorkflowTemplates, WorkflowTriggerEvents } from "@calcom/prisma/enums";
 import { stringOrNumber } from "@calcom/prisma/zod-utils";

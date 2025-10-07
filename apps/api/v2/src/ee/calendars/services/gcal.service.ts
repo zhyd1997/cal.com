@@ -12,7 +12,7 @@ import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { Request } from "express";
 import { OAuth2Client } from "googleapis-common";
-import { z } from "zod";
+import * as z from "zod";
 
 import { SUCCESS_STATUS, GOOGLE_CALENDAR_TYPE } from "@calcom/platform-constants";
 import { Prisma } from "@calcom/prisma/client";

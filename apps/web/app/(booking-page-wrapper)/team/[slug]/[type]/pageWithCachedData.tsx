@@ -3,7 +3,7 @@ import type { PageProps, Params } from "app/_types";
 import { generateMeetingMetadata } from "app/_utils";
 import { headers, cookies } from "next/headers";
 import { notFound, redirect } from "next/navigation";
-import { z } from "zod";
+import * as z from "zod";
 
 import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
 import { getBookingForReschedule, type GetBookingType } from "@calcom/features/bookings/lib/get-booking";

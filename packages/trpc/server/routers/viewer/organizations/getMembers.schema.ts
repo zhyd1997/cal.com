@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZGetMembersInput = z.object({
   teamIdToExclude: z.number().optional(),

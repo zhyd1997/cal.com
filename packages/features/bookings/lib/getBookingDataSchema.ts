@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { extendedBookingCreateBody } from "./bookingCreateBodySchema";
 import type { getBookingFieldsWithSystemFields } from "./getBookingFields";

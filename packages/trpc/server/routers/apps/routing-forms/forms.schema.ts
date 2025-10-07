@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { filterQuerySchemaStrict } from "@calcom/features/filters/lib/getTeamsFiltersFromQuery";
 

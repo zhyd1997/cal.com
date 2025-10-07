@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import qs from "qs";
 import { useEffect, useRef } from "react";
-import { z } from "zod";
+import * as z from "zod";
 
 import { useHitPayDropIn } from "@calcom/app-store/hitpay/components/HitPayDropIn";
 

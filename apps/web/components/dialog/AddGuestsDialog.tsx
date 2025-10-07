@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
-import { z } from "zod";
+import * as z from "zod";
 
 import { Dialog } from "@calcom/features/components/controlled-dialog";
 import { useLocale } from "@calcom/lib/hooks/useLocale";

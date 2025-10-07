@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { TeamBilling } from "../../teams";
 import type { SWHMap } from "./__handler";

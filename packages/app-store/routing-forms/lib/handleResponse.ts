@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { emailSchema } from "@calcom/lib/emailSchema";
 import { HttpError } from "@calcom/lib/http-error";

@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { ApiKeySchema as ApiKey } from "@calcom/prisma/zod/modelSchema/ApiKeySchema";
 

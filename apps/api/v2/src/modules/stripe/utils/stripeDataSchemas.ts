@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const stripeOAuthTokenSchema = z.object({
   access_token: z.string().optional(),

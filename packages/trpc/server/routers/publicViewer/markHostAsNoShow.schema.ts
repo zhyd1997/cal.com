@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZMarkHostAsNoShowInputSchema = z.object({
   bookingUid: z.string(),

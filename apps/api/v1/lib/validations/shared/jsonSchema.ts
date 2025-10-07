@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 // Helper schema for JSON fields
 type Literal = boolean | number | string | null;

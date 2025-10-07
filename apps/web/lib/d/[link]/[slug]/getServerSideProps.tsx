@@ -1,6 +1,6 @@
 import type { EmbedProps } from "app/WithEmbedSSR";
 import type { GetServerSidePropsContext } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
 import { getBookingForReschedule, getMultipleDurationValue } from "@calcom/features/bookings/lib/get-booking";

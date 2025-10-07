@@ -2,7 +2,7 @@ import { ApiProperty as DocsProperty, ApiProperty } from "@nestjs/swagger";
 import { Type } from "class-transformer";
 import { IsString, IsBoolean, IsOptional, ValidateNested, IsArray, IsDate } from "class-validator";
 import { DateTime } from "luxon";
-import { z } from "zod";
+import * as z from "zod";
 
 const scheduleSchema_2024_04_15 = z.object({
   id: z.number().int(),

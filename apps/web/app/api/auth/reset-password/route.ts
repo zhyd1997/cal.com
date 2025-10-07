@@ -3,7 +3,7 @@ import { parseRequestData } from "app/api/parseRequestData";
 import { cookies } from "next/headers";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { z } from "zod";
+import * as z from "zod";
 
 import { validPassword } from "@calcom/features/auth/lib/validPassword";
 import { hashPassword } from "@calcom/lib/auth/hashPassword";

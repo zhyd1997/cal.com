@@ -1,6 +1,6 @@
 import type { NextApiRequest } from "next";
 import { stringify } from "querystring";
-import { z } from "zod";
+import * as z from "zod";
 
 import { WEBAPP_URL } from "@calcom/lib/constants";
 import { defaultHandler } from "@calcom/lib/server/defaultHandler";

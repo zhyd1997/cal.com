@@ -1,7 +1,7 @@
 import { defaultResponderForAppDir } from "app/api/defaultResponderForAppDir";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { z } from "zod";
+import * as z from "zod";
 
 import { TeamBilling } from "@calcom/ee/billing/teams";
 import prisma from "@calcom/prisma";

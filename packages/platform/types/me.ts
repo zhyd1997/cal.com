@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const userSchemaResponse = z.object({
   id: z.number().int(),

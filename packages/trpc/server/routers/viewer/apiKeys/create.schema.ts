@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZCreateInputSchema = z.object({
   note: z.string().optional().nullish(),

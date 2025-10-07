@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 /** @see https://github.com/colinhacks/zod/issues/3155#issuecomment-2060045794 */
 export const emailRegex =

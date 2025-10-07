@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { createOrganizationFromOnboarding } from "@calcom/features/ee/organizations/lib/server/createOrganizationFromOnboarding";
 import logger from "@calcom/lib/logger";

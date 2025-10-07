@@ -4,7 +4,7 @@ import { cookies, headers } from "next/headers";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import type Stripe from "stripe";
-import { z } from "zod";
+import * as z from "zod";
 
 import { getRequestedSlugError } from "@calcom/app-store/stripepayment/lib/team-billing";
 import { getServerSession } from "@calcom/features/auth/lib/getServerSession";

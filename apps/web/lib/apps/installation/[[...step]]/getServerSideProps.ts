@@ -1,5 +1,5 @@
 import type { GetServerSidePropsContext } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import { appStoreMetadata } from "@calcom/app-store/appStoreMetaData";
 import type { LocationObject } from "@calcom/app-store/locations";
@@ -281,7 +281,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
     id: user.id,
     name: user.name,
     avatarUrl: user.avatarUrl,
-    alreadyInstalled: appInstalls.some((install) => !Boolean(install.teamId) && install.userId === user.id),
+    alreadyInstalled: appInstalls.some((install) => !install.teamId && install.userId === user.id),
   };
 
   const teamsWithIsAppInstalled = hasTeams

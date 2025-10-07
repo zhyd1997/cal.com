@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { orgSettingsSchema } from "@calcom/prisma/zod-utils";
 

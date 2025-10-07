@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZGetMeetingInformationInputSchema = z.object({
   roomName: z.string(),

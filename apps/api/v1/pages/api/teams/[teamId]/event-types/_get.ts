@@ -1,5 +1,5 @@
 import type { NextApiRequest } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import { defaultResponder } from "@calcom/lib/server/defaultResponder";
 import { prisma } from "@calcom/prisma";

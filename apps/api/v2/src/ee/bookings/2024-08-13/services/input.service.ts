@@ -27,7 +27,7 @@ import { Request } from "express";
 import { DateTime } from "luxon";
 import { NextApiRequest } from "next/types";
 import { v4 as uuidv4 } from "uuid";
-import { z } from "zod";
+import * as z from "zod";
 
 import { CreationSource } from "@calcom/platform-libraries";
 import { EventTypeMetaDataSchema } from "@calcom/platform-libraries/event-types";

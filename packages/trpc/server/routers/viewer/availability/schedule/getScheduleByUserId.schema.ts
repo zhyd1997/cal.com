@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZGetByUserIdInputSchema = z.object({
   userId: z.optional(z.number()),

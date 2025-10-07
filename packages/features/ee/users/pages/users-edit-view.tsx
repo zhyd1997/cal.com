@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { z } from "zod";
+import * as z from "zod";
 
 import NoSSR from "@calcom/lib/components/NoSSR";
 import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";

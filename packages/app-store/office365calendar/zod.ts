@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const appKeysSchema = z.object({
   client_id: z.string().min(1),

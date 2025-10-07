@@ -1,6 +1,6 @@
 import { type Params } from "app/_types";
 import { _generateMetadata, getTranslate } from "app/_utils";
-import { z } from "zod";
+import * as z from "zod";
 
 import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
 import { OrgForm } from "@calcom/features/ee/organizations/pages/settings/admin/AdminOrgEditPage";

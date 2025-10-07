@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZSendVerificationCodeInputSchema = z.object({
   phoneNumber: z.string(),

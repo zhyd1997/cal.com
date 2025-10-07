@@ -10,7 +10,7 @@ import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { Request } from "express";
 import { stringify } from "querystring";
-import { z } from "zod";
+import * as z from "zod";
 
 import {
   SUCCESS_STATUS,

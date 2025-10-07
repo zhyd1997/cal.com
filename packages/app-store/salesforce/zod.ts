@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { eventTypeAppCardZod } from "../eventTypeAppCardZod";
 import { SalesforceRecordEnum, WhenToWriteToRecord, SalesforceFieldType } from "./lib/enums";

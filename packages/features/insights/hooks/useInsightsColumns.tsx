@@ -1,8 +1,8 @@
 import { createColumnHelper } from "@tanstack/react-table";
-// eslint-disable-next-line no-restricted-imports
+ 
 import startCase from "lodash/startCase";
 import { useMemo } from "react";
-import { z } from "zod";
+import * as z from "zod";
 
 import dayjs from "@calcom/dayjs";
 import { ColumnFilterType } from "@calcom/features/data-table";

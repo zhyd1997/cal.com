@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import authedProcedure from "../../../procedures/authedProcedure";
 import { router } from "../../../trpc";

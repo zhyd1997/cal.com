@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZValidateLicenseInputSchema = z.object({
   licenseKey: z.string().min(1, "License key is required"),

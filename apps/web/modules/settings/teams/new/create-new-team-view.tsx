@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import React from "react";
-import { z } from "zod";
+import * as z from "zod";
 
 import { CreateANewTeamForm } from "@calcom/features/ee/teams/components";
 import { HOSTED_CAL_FEATURES } from "@calcom/lib/constants";

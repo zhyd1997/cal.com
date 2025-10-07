@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZBuyCreditsSchema = z.object({
   quantity: z.number(),

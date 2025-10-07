@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 // Extracted out as utility function so can be reused
 // at different endpoints that require this validation.

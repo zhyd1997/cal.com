@@ -1,5 +1,5 @@
 import type { ParsedUrlQuery } from "querystring";
-import { z } from "zod";
+import * as z from "zod";
 
 // Take array as a string and return zod array
 const queryStringArray = z

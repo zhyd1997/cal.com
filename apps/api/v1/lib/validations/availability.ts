@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { denullishShape } from "@calcom/prisma/zod-utils";
 import { AvailabilitySchema } from "@calcom/prisma/zod/modelSchema/AvailabilitySchema";

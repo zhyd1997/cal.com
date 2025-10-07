@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZAppCredentialsByTypeInputSchema = z.object({
   appType: z.string(),

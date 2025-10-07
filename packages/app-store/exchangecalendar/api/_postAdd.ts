@@ -1,6 +1,6 @@
 import { SoapFaultDetails } from "ews-javascript-api";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import { symmetricEncrypt } from "@calcom/lib/crypto";
 import { emailSchema } from "@calcom/lib/emailSchema";

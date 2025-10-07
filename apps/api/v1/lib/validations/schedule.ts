@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import dayjs from "@calcom/dayjs";
 import { AvailabilitySchema } from "@calcom/prisma/zod/modelSchema/AvailabilitySchema";

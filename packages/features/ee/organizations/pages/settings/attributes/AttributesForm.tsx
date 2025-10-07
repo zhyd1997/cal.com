@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useState } from "react";
 import type { UseFormReturn, FieldArrayWithId } from "react-hook-form";
 import { Controller, useForm, useFieldArray } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod";
 
 import { Dialog } from "@calcom/features/components/controlled-dialog";
 import { useLocale } from "@calcom/lib/hooks/useLocale";

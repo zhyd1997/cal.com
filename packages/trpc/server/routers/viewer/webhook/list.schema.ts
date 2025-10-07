@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { WEBHOOK_TRIGGER_EVENTS } from "@calcom/features/webhooks/lib/constants";
 

@@ -2,13 +2,13 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { revalidateSettingsProfile } from "app/cache/path/settings/my-account";
-// eslint-disable-next-line no-restricted-imports
+ 
 import { get, pick } from "lodash";
 import { signOut, useSession } from "next-auth/react";
 import type { BaseSyntheticEvent } from "react";
 import React, { useRef, useState } from "react";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod";
 
 import { ErrorCode } from "@calcom/features/auth/lib/ErrorCode";
 import { Dialog } from "@calcom/features/components/controlled-dialog";
@@ -215,7 +215,7 @@ const ProfileView = ({ user }: Props) => {
     }
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+   
   const passwordRef = useRef<HTMLInputElement>(null!);
 
   const errorMessages: { [key: string]: string } = {

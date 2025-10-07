@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export type IntervalLimitUnit = "day" | "week" | "month" | "year";
 export type IntervalLimit = Partial<Record<`PER_${Uppercase<IntervalLimitUnit>}`, number | undefined>>;

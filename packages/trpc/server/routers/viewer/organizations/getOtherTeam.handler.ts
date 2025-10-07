@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
 import prisma from "@calcom/prisma";

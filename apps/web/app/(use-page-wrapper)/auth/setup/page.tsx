@@ -3,7 +3,7 @@ import type { PageProps as ServerPageProps } from "app/_types";
 import { _generateMetadata } from "app/_utils";
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { z } from "zod";
+import * as z from "zod";
 
 import { buildLegacyCtx } from "@lib/buildLegacyCtx";
 

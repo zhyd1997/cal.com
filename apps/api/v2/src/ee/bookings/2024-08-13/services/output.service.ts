@@ -9,7 +9,7 @@ import { safeParse } from "@/lib/safe-parse/safe-parse";
 import { Injectable } from "@nestjs/common";
 import { plainToClass } from "class-transformer";
 import { DateTime } from "luxon";
-import { z } from "zod";
+import * as z from "zod";
 
 import { bookingMetadataSchema } from "@calcom/platform-libraries";
 import {

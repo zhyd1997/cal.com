@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { ZFilterValue } from "@calcom/features/data-table/lib/types";
 

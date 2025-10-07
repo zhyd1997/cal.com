@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { extendedBookingCreateBody } from "@calcom/features/bookings/lib/bookingCreateBodySchema";
 import { iso8601 } from "@calcom/prisma/zod-utils";

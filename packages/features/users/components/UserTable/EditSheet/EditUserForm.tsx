@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react";
 import type { Dispatch } from "react";
 import { useMemo, useState } from "react";
 import { Controller, useForm, useFormContext } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod";
 
 import { TimezoneSelect } from "@calcom/features/components/timezone-select";
 import { timeZoneSchema } from "@calcom/lib/dayjs/timeZone.schema";

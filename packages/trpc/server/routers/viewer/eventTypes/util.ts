@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import type { PermissionString } from "@calcom/features/pbac/domain/types/permission-registry";
 import { PermissionCheckService } from "@calcom/features/pbac/services/permission-check.service";
@@ -254,7 +254,7 @@ export const mapEventType = async (eventType: EventType) => ({
   ...eventType,
   safeDescription: eventType?.description ? markdownToSafeHTML(eventType.description) : undefined,
   users: await Promise.all(
-    (!!eventType?.hosts?.length ? eventType?.hosts.map((host) => host.user) : eventType.users).map(
+    (eventType?.hosts?.length ? eventType?.hosts.map((host) => host.user) : eventType.users).map(
       async (u) =>
         await new UserRepository(prisma).enrichUserWithItsProfile({
           user: u,

@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { serviceAccountKeySchema } from "@calcom/prisma/zod-utils";
 

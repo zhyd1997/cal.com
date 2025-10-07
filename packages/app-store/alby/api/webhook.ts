@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import getRawBody from "raw-body";
-import { z } from "zod";
+import * as z from "zod";
 
 import { handlePaymentSuccess } from "@calcom/app-store/_utils/payments/handlePaymentSuccess";
 import { albyCredentialKeysSchema } from "@calcom/app-store/alby/lib";

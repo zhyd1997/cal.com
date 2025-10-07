@@ -1,5 +1,5 @@
 import type { ReadonlyURLSearchParams } from "next/navigation";
-import { z } from "zod";
+import * as z from "zod";
 
 import { EmbedTheme } from "@calcom/features/embed/lib/constants";
 

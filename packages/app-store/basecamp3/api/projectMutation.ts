@@ -1,5 +1,5 @@
 import type { NextApiRequest } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import getAppKeysFromSlug from "@calcom/app-store/_utils/getAppKeysFromSlug";
 import { refreshAccessToken } from "@calcom/app-store/basecamp3/lib/helpers";

@@ -1,6 +1,6 @@
 import type { PageProps } from "app/_types";
 import { notFound } from "next/navigation";
-import { z } from "zod";
+import * as z from "zod";
 
 import SamlIdpClient from "~/auth/saml-idp/saml-idp-view";
 

@@ -1,5 +1,5 @@
 import { decodeHTML } from "entities";
-import { z } from "zod";
+import * as z from "zod";
 
 import dayjs from "@calcom/dayjs";
 import { FeaturesRepository } from "@calcom/features/flags/features.repository";

@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZCreateWebCallInputSchema = z.object({
   agentId: z.string().min(1, "Agent ID is required"),

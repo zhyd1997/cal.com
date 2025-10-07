@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { APP_CREDENTIAL_SHARING_ENABLED } from "@calcom/lib/constants";
 

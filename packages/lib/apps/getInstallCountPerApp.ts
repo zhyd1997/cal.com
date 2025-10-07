@@ -1,5 +1,5 @@
 import { unstable_cache } from "next/cache";
-import { z } from "zod";
+import * as z from "zod";
 
 import prisma from "@calcom/prisma";
 

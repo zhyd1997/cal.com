@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZGetInputSchema = z.object({
   organizationId: z.union([z.number(), z.null()]),

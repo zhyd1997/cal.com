@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Toaster } from "sonner";
-import { z } from "zod";
+import * as z from "zod";
 
 import AppNotInstalledMessage from "@calcom/app-store/_components/AppNotInstalledMessage";
 import KeyField from "@calcom/app-store/btcpayserver/components/KeyInput";

@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { locales as i18nLocales } from "@calcom/lib/i18n";
 import logger from "@calcom/lib/logger";

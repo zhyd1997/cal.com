@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZAdminToggleFeatureFlagSchema = z.object({
   slug: z.string(),

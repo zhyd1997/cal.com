@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const createAttributeSchema = z.object({
   name: z.string(),

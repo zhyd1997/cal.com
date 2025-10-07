@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZBulkUpdateToDefaultLocationInputSchema = z.object({
   eventTypeIds: z.array(z.number()),

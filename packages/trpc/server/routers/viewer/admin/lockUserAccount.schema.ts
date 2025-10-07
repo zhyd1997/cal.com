@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZAdminLockUserAccountSchema = z.object({
   userId: z.number(),

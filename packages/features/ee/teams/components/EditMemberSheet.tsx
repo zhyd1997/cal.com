@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import type { Dispatch } from "react";
 import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod";
 import { shallow } from "zustand/shallow";
 
 import { DisplayInfo } from "@calcom/features/users/components/UserTable/EditSheet/DisplayInfo";
@@ -58,7 +58,7 @@ export function EditMemberSheet({
   const bookerUrl = selectedUser.bookerUrl;
   const utils = trpc.useUtils();
   const bookerUrlWithoutProtocol = bookerUrl.replace(/^https?:\/\//, "");
-  const bookingLink = !!selectedUser.username ? `${bookerUrlWithoutProtocol}/${selectedUser.username}` : "";
+  const bookingLink = selectedUser.username ? `${bookerUrlWithoutProtocol}/${selectedUser.username}` : "";
 
   // Load custom roles for the team
   const { data: customRoles, isPending: isLoadingRoles } = trpc.viewer.pbac.getTeamRoles.useQuery(

@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZListCallsInputSchema = z.object({
   limit: z.number().min(1).max(1000).default(50),

@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { getAppFromSlug } from "@calcom/app-store/utils";
 import { DATABASE_CHUNK_SIZE } from "@calcom/lib/constants";

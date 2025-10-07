@@ -5,7 +5,7 @@ import { signOut } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 import { Suspense, useTransition } from "react";
 import { Toaster } from "sonner";
-import { z } from "zod";
+import * as z from "zod";
 
 import { APP_NAME } from "@calcom/lib/constants";
 import { useLocale } from "@calcom/lib/hooks/useLocale";

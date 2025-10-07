@@ -1,5 +1,5 @@
 import type { PageProps } from "app/_types";
-import { z } from "zod";
+import * as z from "zod";
 
 // import { cookies, headers } from "next/headers";
 // import { getServerSession } from "@calcom/features/auth/lib/getServerSession";

@@ -34,7 +34,7 @@ import {
 import { BadRequestException } from "@nestjs/common";
 import { Request } from "express";
 import { DateTime } from "luxon";
-import { z } from "zod";
+import * as z from "zod";
 
 import {
   handleNewRecurringBooking,

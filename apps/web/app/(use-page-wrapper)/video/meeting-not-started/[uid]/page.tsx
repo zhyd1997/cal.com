@@ -3,7 +3,7 @@ import type { PageProps as ServerPageProps } from "app/_types";
 import { _generateMetadata } from "app/_utils";
 import { cookies, headers } from "next/headers";
 import { notFound } from "next/navigation";
-import { z } from "zod";
+import * as z from "zod";
 
 import { BookingRepository } from "@calcom/lib/server/repository/booking";
 import { prisma } from "@calcom/prisma";

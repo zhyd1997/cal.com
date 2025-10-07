@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { z } from "zod";
+import * as z from "zod";
 
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 

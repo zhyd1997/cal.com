@@ -1,5 +1,5 @@
 import type { SortingState, ColumnSort } from "@tanstack/react-table";
-import { z } from "zod";
+import * as z from "zod";
 
 import type { IconName } from "@calcom/ui/components/icon";
 

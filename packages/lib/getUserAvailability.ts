@@ -1,5 +1,5 @@
 import * as Sentry from "@sentry/nextjs";
-import { z } from "zod";
+import * as z from "zod";
 
 import { getCalendar } from "@calcom/app-store/_utils/getCalendar";
 import type { Dayjs } from "@calcom/dayjs";
@@ -641,9 +641,9 @@ export class UserAvailabilityService {
           // you can obtain that from user availability defined outside of here
           fromUser: { id: user.id, displayName: user.name },
           // optional chaining destructuring toUser
-          toUser: !!toUser ? { id: toUser.id, displayName: toUser.name, username: toUser.username } : null,
-          reason: !!reason ? reason.reason : null,
-          emoji: !!reason ? reason.emoji : null,
+          toUser: toUser ? { id: toUser.id, displayName: toUser.name, username: toUser.username } : null,
+          reason: reason ? reason.reason : null,
+          emoji: reason ? reason.emoji : null,
         };
       }
 

@@ -41,7 +41,7 @@ import {
 import { ApiHeader, ApiOperation, ApiParam, ApiQuery, ApiTags as DocsTags } from "@nestjs/swagger";
 import { plainToClass } from "class-transformer";
 import { Request } from "express";
-import { z } from "zod";
+import * as z from "zod";
 
 import { APPS_READ } from "@calcom/platform-constants";
 import {

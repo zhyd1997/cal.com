@@ -12,7 +12,7 @@ import {
   ThrottlerModuleOptions,
 } from "@nestjs/throttler";
 import { Request, Response } from "express";
-import { z } from "zod";
+import * as z from "zod";
 
 import { X_CAL_CLIENT_ID } from "@calcom/platform-constants";
 

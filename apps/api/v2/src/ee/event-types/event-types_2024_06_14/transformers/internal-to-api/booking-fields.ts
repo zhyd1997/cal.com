@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import type {
   OutputBookingField_2024_06_14,

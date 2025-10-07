@@ -5,7 +5,7 @@ import React, { forwardRef, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod";
 
 import type { LocationObject } from "@calcom/app-store/locations";
 import { locationsResolver } from "@calcom/app-store/locations";

@@ -1,5 +1,5 @@
 import { withValidation } from "next-validations";
-import { z } from "zod";
+import * as z from "zod";
 
 import { stringOrNumber } from "@calcom/prisma/zod-utils";
 

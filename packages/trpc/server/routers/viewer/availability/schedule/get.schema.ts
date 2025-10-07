@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZGetInputSchema = z.object({
   scheduleId: z.optional(z.number()),

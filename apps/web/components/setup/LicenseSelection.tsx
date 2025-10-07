@@ -6,7 +6,7 @@ import classNames from "classnames";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 import { Controller, FormProvider, useForm, useFormState } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod";
 
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import type { RouterInputs, RouterOutputs } from "@calcom/trpc/react";

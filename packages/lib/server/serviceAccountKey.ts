@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { SERVICE_ACCOUNT_ENCRYPTION_KEY } from "@calcom/lib/constants";
 import { symmetricEncrypt, symmetricDecrypt } from "@calcom/lib/crypto";

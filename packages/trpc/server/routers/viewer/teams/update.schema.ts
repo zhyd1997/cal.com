@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { intervalLimitsType } from "@calcom/lib/intervalLimits/intervalLimitSchema";
 import type { IntervalLimit } from "@calcom/lib/intervalLimits/intervalLimitSchema";

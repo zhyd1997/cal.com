@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import {
   MAX_SEATS_PER_TIME_SLOT,

@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import logger from "@calcom/lib/logger";
 import prisma from "@calcom/prisma";

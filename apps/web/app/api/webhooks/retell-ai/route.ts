@@ -2,7 +2,7 @@ import { defaultResponderForAppDir } from "app/api/defaultResponderForAppDir";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { Retell } from "retell-sdk";
-import { z } from "zod";
+import * as z from "zod";
 
 import { CreditService } from "@calcom/features/ee/billing/credit-service";
 import logger from "@calcom/lib/logger";
@@ -133,7 +133,7 @@ async function handleCallAnalyzed(callData: any) {
     );
     return {
       success: true,
-      message: `Invalid or missing call_cost.total_duration_seconds for call ${call_id}`
+      message: `Invalid or missing call_cost.total_duration_seconds for call ${call_id}`,
     };
   }
 
@@ -146,7 +146,7 @@ async function handleCallAnalyzed(callData: any) {
       log.error(`Web call ${call_id} missing agent_id, cannot charge credits`);
       return {
         success: false,
-        message: `Web call ${call_id} missing agent_id, cannot charge credits`
+        message: `Web call ${call_id} missing agent_id, cannot charge credits`,
       };
     }
 
@@ -158,10 +158,9 @@ async function handleCallAnalyzed(callData: any) {
       log.error(`No agent found for providerAgentId ${agent_id}, call ${call_id}`);
       return {
         success: false,
-        message: `No agent found for providerAgentId ${agent_id}, call ${call_id}`
+        message: `No agent found for providerAgentId ${agent_id}, call ${call_id}`,
       };
     }
-
 
     userId = agent.userId ?? undefined;
     teamId = agent.teamId ?? undefined;

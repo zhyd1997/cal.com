@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { timeZoneSchema } from "@calcom/lib/dayjs/timeZone.schema";
 import { MembershipRole } from "@calcom/prisma/enums";

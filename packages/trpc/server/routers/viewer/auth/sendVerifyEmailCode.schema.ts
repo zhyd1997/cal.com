@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZSendVerifyEmailCodeSchema = z.object({
   email: z.string().min(1),

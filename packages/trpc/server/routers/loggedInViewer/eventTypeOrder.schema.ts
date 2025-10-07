@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZEventTypeOrderInputSchema = z.object({
   ids: z.array(z.number()),

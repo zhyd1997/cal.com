@@ -3,7 +3,7 @@ import { isValidPhoneNumber } from "libphonenumber-js";
 import type { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod";
 
 import { Dialog } from "@calcom/features/components/controlled-dialog";
 import PhoneInput from "@calcom/features/components/phone-input";

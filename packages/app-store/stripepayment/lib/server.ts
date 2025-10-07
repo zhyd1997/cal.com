@@ -1,5 +1,5 @@
 import Stripe from "stripe";
-import { z } from "zod";
+import * as z from "zod";
 
 export type StripePaymentData = Stripe.Response<Stripe.PaymentIntent> & {
   stripe_publishable_key: string;

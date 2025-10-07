@@ -1,6 +1,6 @@
 import { stringify } from "querystring";
 import { v4 as uuidv4 } from "uuid";
-import { z } from "zod";
+import * as z from "zod";
 
 import logger from "@calcom/lib/logger";
 import { safeStringify } from "@calcom/lib/safeStringify";

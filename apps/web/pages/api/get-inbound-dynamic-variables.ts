@@ -1,6 +1,6 @@
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import dayjs from "@calcom/dayjs";
 import { ZGetRetellLLMSchema } from "@calcom/features/calAIPhone/zod-utils";

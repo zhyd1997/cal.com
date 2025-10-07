@@ -1,5 +1,5 @@
 import type { GetServerSidePropsContext } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
 import { getClientSecretFromPayment } from "@calcom/features/ee/payments/pages/getClientSecretFromPayment";
@@ -47,7 +47,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
 
   if (!eventType) return { notFound: true } as const;
 
-  if (eventType.users.length === 0 && !!!eventType.team) return { notFound: true } as const;
+  if (eventType.users.length === 0 && !eventType.team) return { notFound: true } as const;
 
   const [user] = eventType?.users.length
     ? eventType.users

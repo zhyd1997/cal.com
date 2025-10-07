@@ -1,5 +1,5 @@
 import type { GetServerSidePropsContext } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
 import { CredentialRepository } from "@calcom/lib/server/repository/credential";

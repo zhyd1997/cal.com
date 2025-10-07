@@ -14,7 +14,7 @@ import {
 } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import Stripe from "stripe";
-import { z } from "zod";
+import * as z from "zod";
 
 import { SUCCESS_STATUS } from "@calcom/platform-constants";
 import type { Prisma, Credential, User } from "@calcom/prisma/client";

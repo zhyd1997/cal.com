@@ -1,5 +1,5 @@
 import Script from "next/script";
-import { z } from "zod";
+import * as z from "zod";
 
 import { trpc } from "@calcom/trpc/react";
 

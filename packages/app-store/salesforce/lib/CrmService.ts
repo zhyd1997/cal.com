@@ -1,7 +1,7 @@
 import type { TokenResponse, Connection, Field } from "@jsforce/jsforce-node";
 import jsforce from "@jsforce/jsforce-node";
 import { RRule } from "rrule";
-import { z } from "zod";
+import * as z from "zod";
 
 import { RoutingFormResponseDataFactory } from "@calcom/app-store/routing-forms/lib/RoutingFormResponseDataFactory";
 import { getLocation } from "@calcom/lib/CalEventParser";

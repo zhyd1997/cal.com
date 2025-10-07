@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { MembershipRole } from "@calcom/prisma/enums";
 

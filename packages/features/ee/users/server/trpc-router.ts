@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { getOrgFullOrigin } from "@calcom/ee/organizations/lib/orgDomains";
 import { RedirectType, CreationSource } from "@calcom/prisma/enums";

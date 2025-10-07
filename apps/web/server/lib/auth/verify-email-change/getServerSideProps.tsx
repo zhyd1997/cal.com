@@ -1,5 +1,5 @@
 import type { GetServerSidePropsContext } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import { WEBAPP_URL } from "@calcom/lib/constants";
 

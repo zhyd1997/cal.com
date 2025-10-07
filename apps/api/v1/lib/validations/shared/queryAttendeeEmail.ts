@@ -1,5 +1,5 @@
 import { withValidation } from "next-validations";
-import { z } from "zod";
+import * as z from "zod";
 
 import { emailSchema } from "@calcom/lib/emailSchema";
 

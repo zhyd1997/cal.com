@@ -1,6 +1,6 @@
 import type { Session } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { z } from "zod";
+import * as z from "zod";
 
 import { ensureOrganizationIsReviewed } from "@calcom/ee/organizations/lib/ensureOrganizationIsReviewed";
 import { getOrgFullOrigin, subdomainSuffix } from "@calcom/ee/organizations/lib/orgDomains";

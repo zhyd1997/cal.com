@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import type { Language } from "@calcom/features/calAIPhone/providers/retellAI/types";
 

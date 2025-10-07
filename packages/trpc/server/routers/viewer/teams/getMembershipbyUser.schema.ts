@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZGetMembershipbyUserInputSchema = z.object({
   teamId: z.number(),

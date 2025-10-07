@@ -1,6 +1,6 @@
 import { createRouterCaller } from "app/_trpc/context";
 import type { GetServerSidePropsContext } from "next";
-import { z } from "zod";
+import * as z from "zod";
 
 import { eventTypeMetaDataSchemaWithTypedApps } from "@calcom/app-store/zod-utils";
 import { orgDomainConfig } from "@calcom/ee/organizations/lib/orgDomains";
@@ -115,7 +115,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   bookingInfo["startTime"] = (bookingInfo?.startTime as Date)?.toISOString() as unknown as Date;
   bookingInfo["endTime"] = (bookingInfo?.endTime as Date)?.toISOString() as unknown as Date;
 
-  eventTypeRaw.users = !!eventTypeRaw.hosts?.length
+  eventTypeRaw.users = eventTypeRaw.hosts?.length
     ? eventTypeRaw.hosts.map((host) => host.user)
     : eventTypeRaw.users;
 

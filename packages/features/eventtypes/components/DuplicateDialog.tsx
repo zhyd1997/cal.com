@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod";
 
 import { Dialog } from "@calcom/features/components/controlled-dialog";
 import { EventTypeDuplicateInput } from "@calcom/features/eventtypes/lib/types";
@@ -151,7 +151,7 @@ const DuplicateDialog = () => {
                   </>
                 }
                 {...register("slug")}
-                 onChange={(e) => {
+                onChange={(e) => {
                   form.setValue("slug", slugify(e?.target.value), { shouldTouch: true });
                 }}
               />

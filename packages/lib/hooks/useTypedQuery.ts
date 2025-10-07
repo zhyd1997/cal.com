@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useMemo, useEffect } from "react";
-import { z } from "zod";
+import * as z from "zod";
 
 import { useRouterQuery } from "./useRouterQuery";
 

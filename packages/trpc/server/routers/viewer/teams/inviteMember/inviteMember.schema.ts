@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { MAX_NB_INVITES } from "@calcom/lib/constants";
 import { emailSchema } from "@calcom/lib/emailSchema";

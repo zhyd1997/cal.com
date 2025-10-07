@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZRoutingFormOrderInputSchema = z.object({
   ids: z.array(z.string()),

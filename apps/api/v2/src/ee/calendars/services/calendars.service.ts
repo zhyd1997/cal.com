@@ -15,7 +15,7 @@ import {
   UnauthorizedException,
 } from "@nestjs/common";
 import { DateTime } from "luxon";
-import { z } from "zod";
+import * as z from "zod";
 
 import { APPS_TYPE_ID_MAPPING } from "@calcom/platform-constants";
 import {

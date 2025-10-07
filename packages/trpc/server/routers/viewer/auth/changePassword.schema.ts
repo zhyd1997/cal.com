@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 export const ZChangePasswordInputSchema = z.object({
   oldPassword: z.string(),
