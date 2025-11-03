@@ -9,7 +9,7 @@ import { generateSecret } from "@calcom/trpc/server/routers/viewer/oAuth/addClie
 import type { OAuthTokenPayload } from "@calcom/types/oauth";
 
 async function handler(req: NextRequest) {
-  const { client_id, client_secret, grant_type } = await parseUrlFormData(req);
+  const { client_id, client_secret, grant_type, refresh_token } = await parseUrlFormData(req);
 
   if (!client_id || !client_secret) {
     return NextResponse.json({ message: "Missing client id or secret" }, { status: 400 });
@@ -40,8 +40,8 @@ async function handler(req: NextRequest) {
   let decodedRefreshToken: OAuthTokenPayload;
 
   try {
-    const refreshToken = req.headers.get("authorization")?.split(" ")[1] || "";
-    decodedRefreshToken = jwt.verify(refreshToken, secretKey) as OAuthTokenPayload;
+    const refreshTokenValue = refresh_token || req.headers.get("authorization")?.split(" ")[1] || "";
+    decodedRefreshToken = jwt.verify(refreshTokenValue, secretKey) as OAuthTokenPayload;
   } catch {
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
   }
